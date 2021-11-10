@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta name="google-site-verification" content="MpwZIdsTEysuFEaNNe5aUPoa74MyT5SuAqx-BTB8Iyw" />
+      <meta name="baidu-site-verification" content="code-gVPupWe19u" />
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>部署网站知识总结 |  Code for Fun</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/iron_man_128.png" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    </head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-部署网站"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  部署网站知识总结
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2020/09/24/%E9%83%A8%E7%BD%B2%E7%BD%91%E7%AB%99/" class="article-date">
+  <time datetime="2020-09-23T16:00:00.000Z" itemprop="datePublished">2020-09-24</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%BD%91%E7%AB%99/">网站</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">2.5k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">10 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p><strong>待完善</strong></p>
+<h2 id="前提："><a href="#前提：" class="headerlink" title="前提："></a>前提：</h2><h4 id="备案："><a href="#备案：" class="headerlink" title="备案："></a>备案：</h4><p>所谓的网站备案其实是网站的ICP备案的简称，国家相关规定如下：《互联网信息服务管理办法》指出互联网信息服务分为经营性和非经营性两类。国家对经营性互联网信息服务实行许可制度；对非经营性互联网信息服务实行备案制度。未取得许可或者未履行备案手续的，不得从事互联网信息服务。</p>
+<p>一般来说，备案指的是域名进行备案，而不是服务器进行备案。一个网站是否备案，是取决于网站所用空间是国内还是国外的.<br>如果是国内主机，网站域名需要备案，才能通过域名访问到你的网站。<br>如果是国外主机，网站域名是不用备案的，也可以通过域名访问。</p>
+<h4 id="解析："><a href="#解析：" class="headerlink" title="解析："></a>解析：</h4><p>域名解析是把域名指向网站空间IP，让人们通过注册的域名可以方便地访问到网站的一种服务。IP地址是网络上标识站点的数字地址，为了方便记忆，采用域名来代替IP地址标识站点地址。域名解析就是域名到IP地址的转换过程。域名的解析工作由DNS服务器完成。</p>
+<p>了解完这些之后，我们可以进行实际操作。</p>
+<h2 id="第一步：购买云服务器"><a href="#第一步：购买云服务器" class="headerlink" title="第一步：购买云服务器"></a>第一步：购买云服务器</h2><h2 id="第二步：Xshell和Xftp"><a href="#第二步：Xshell和Xftp" class="headerlink" title="第二步：Xshell和Xftp"></a>第二步：Xshell和Xftp</h2><h2 id="第三步：安装-Docker-与-Docker-Composer"><a href="#第三步：安装-Docker-与-Docker-Composer" class="headerlink" title="第三步：安装 Docker 与 Docker Composer"></a>第三步：安装 Docker 与 Docker Composer</h2><h3 id="安装-Docker"><a href="#安装-Docker" class="headerlink" title="安装 Docker"></a>安装 Docker</h3><blockquote>
+<p>引用自 <a target="_blank" rel="noopener" href="https://www.runoob.com/docker/centos-docker-install.html">菜鸟教程 - CentOS Docker 安装</a></p>
+</blockquote>
+<p>1、remove old version</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt; sudo yum remove docker \</span><br><span class="line">                  docker-client \</span><br><span class="line">                  docker-client-latest \</span><br><span class="line">                  docker-common \</span><br><span class="line">                  docker-latest \</span><br><span class="line">                  docker-latest-logrotate \</span><br><span class="line">                  docker-logrotate \</span><br><span class="line">                  docker-selinux \</span><br><span class="line">                  docker-engine-selinux \</span><br><span class="line">                  docker-engine</span><br></pre></td></tr></table></figure>
+
+<p>2、安装必要工具</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
+
+<p>3、添加软件源信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+
+<p>4、更新 yum 缓存：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; sudo yum makecache fast</span><br></pre></td></tr></table></figure>
+
+<p>5、安装 Docker-ce：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; sudo yum -y install docker-ce</span><br></pre></td></tr></table></figure>
+
+<p>6、启动 Docker 后台服务</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; sudo systemctl start docker</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装-Docker-Composer"><a href="#安装-Docker-Composer" class="headerlink" title="安装 Docker Composer"></a>安装 Docker Composer</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose</span><br><span class="line">&gt; sudo chmod +x /usr/local/bin/docker-compose</span><br><span class="line">&gt; docker-compose -v</span><br></pre></td></tr></table></figure>
+
+<p>docker composer 是一个很好用的 Docker 进阶工具。</p>
+<p>我们<strong>可以通过撰写 docker-composer.yml 文件并执行 docker-compose up -d</strong> 来更快速的安装某一套环境。</p>
+<h2 id="第四步：安装-Docker-的可视化管理系统，并配置腾讯云安全组"><a href="#第四步：安装-Docker-的可视化管理系统，并配置腾讯云安全组" class="headerlink" title="第四步：安装 Docker 的可视化管理系统，并配置腾讯云安全组"></a>第四步：安装 Docker 的可视化管理系统，并配置腾讯云安全组</h2><h3 id="安装-Docker-的可视化管理系统"><a href="#安装-Docker-的可视化管理系统" class="headerlink" title="安装 Docker 的可视化管理系统"></a>安装 Docker 的可视化管理系统</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker volume create portainer_data</span><br><span class="line">docker run -d -p 9000:9000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer</span><br></pre></td></tr></table></figure>
+
+<p>上面的两部操作中，我们让 Portainer</p>
+<p>——也就是我们的 Docker 可视化管理系统<strong>运行在了服务器的9000 端口上。</strong></p>
+<h3 id="配置安全组"><a href="#配置安全组" class="headerlink" title="配置安全组"></a>配置安全组</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://console.cloud.tencent.com/cvm/securitygroup</span><br></pre></td></tr></table></figure>
+
+<p>当我们现在访问我们的 <a href="https://link.zhihu.com/?target=http://ip">http://ip</a>:port 组合时，我们会发现我们并不可以访问成功。</p>
+<p>这个原因就是，我们<strong>没有配置腾讯云的安全组协议。</strong></p>
+<p>腾讯云的安全组是什么意思呢？</p>
+<p>就是说，<strong>腾讯云会帮你拦截访问你服务器基本上所有端口的 HTTP 请求，</strong></p>
+<p><strong>除非你对某个端口单独配置了安全组协议。</strong></p>
+<p>所以说，我们现在需要配置下安全组协议好让 9000 端口可以被访问。</p>
+<p>点击上面的网址，进入安全组配置，点击「添加入站规则」，按如下方式添加：</p>
+<p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/v2-b7dc78980cd98a4a9e689686184eac39_720w.jpg" alt="img"></p>
+<h2 id="第五步：阿里云购买域名，完成域名解析"><a href="#第五步：阿里云购买域名，完成域名解析" class="headerlink" title="第五步：阿里云购买域名，完成域名解析"></a>第五步：阿里云购买域名，完成域名解析</h2><p>在阿里云中购买域名，并且解析到你的服务器 IP 地址上去。</p>
+<p><strong>当你有多个 WEB 应用都要部署到同一个服务器上时，请确保解析了多个二级域名在同一个服务器上。</strong></p>
+<p>（一级域名 <a href="https://link.zhihu.com/?target=http://xxx.org">http://xxx.org</a>；二级域名：<a href="https://link.zhihu.com/?target=http://www.xxx.org/">www.xxx.org</a> 或 csm.xxx.org）</p>
+<p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/v2-a0f332e578ef4761838950649b39fd9d_720w.jpg" alt="img"></p>
+<p>这里值得注意的是——<strong>域名解析的意思。</strong></p>
+<p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/v2-05d21f1051d70c8bdf6114b55754b9e9_720w.jpg" alt="img"></p>
+<ol>
+<li><strong>我们购买到的域名，如 <a href="https://link.zhihu.com/?target=http://baidu.com">http://baidu.com</a>，是一级域名</strong></li>
+<li><strong>域名解析，从概念上讲，是把</strong> <a href="https://link.zhihu.com/?target=http://www.baidu.com/">www.baidu.com</a> <strong>或</strong> <a href="https://link.zhihu.com/?target=http://wap.baidu.com/">wap.baidu.com</a> <strong>这类的域名解析到某个 IP 地址上（如119.75.217.109）的过程；（详情请看下图的主机记录）</strong></li>
+<li><strong>域名解析，从操作上讲，就是点击「添加记录」，然后输入「你自己拥有的域名」和「任意一条 IP 地址」，然后点击完成的过程；也就是说，你可以把你的域名映射到任意一个公网 IP 上，对方不用确认</strong></li>
+</ol>
+<h2 id="第六步：安装-Nginx，并完成反向代理"><a href="#第六步：安装-Nginx，并完成反向代理" class="headerlink" title="第六步：安装 Nginx，并完成反向代理"></a>第六步：安装 Nginx，并完成反向代理</h2><h3 id="安装反向代理服务器-nginx-reverse-proxy"><a href="#安装反向代理服务器-nginx-reverse-proxy" class="headerlink" title="安装反向代理服务器 nginx-reverse-proxy"></a>安装反向代理服务器 nginx-reverse-proxy</h3><p>首先，先<strong>在我们的服务器中的 root 目录下面创建文件夹 nginx-reverse-proxy，并在其中创建三个子文件夹：</strong></p>
+<ul>
+<li>conf</li>
+<li>www</li>
+<li>logs</li>
+</ul>
+<p>接下来，我们<strong>在 conf 文件夹下创建一个文件 nginx.conf</strong>：<em>（其内容如下）</em></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">user  nginx;</span><br><span class="line">worker_processes  1;</span><br><span class="line"></span><br><span class="line">error_log  /var/log/nginx/error.log warn;</span><br><span class="line">pid        /var/run/nginx.pid;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections  1024;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">    include       /etc/nginx/mime.types;</span><br><span class="line">    default_type  application/octet-stream;</span><br><span class="line"></span><br><span class="line">    log_format  main  &#x27;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &#x27;</span><br><span class="line">                      &#x27;$status $body_bytes_sent &quot;$http_referer&quot; &#x27;</span><br><span class="line">                      &#x27;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&#x27;;</span><br><span class="line"></span><br><span class="line">    access_log  /var/log/nginx/access.log  main;</span><br><span class="line"></span><br><span class="line">    sendfile        on;</span><br><span class="line">    #tcp_nopush     on;</span><br><span class="line"></span><br><span class="line">    keepalive_timeout  65;</span><br><span class="line"></span><br><span class="line">    #gzip  on;</span><br><span class="line"></span><br><span class="line">    include /etc/nginx/conf.d/*.conf;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最后，我们运行 docker 命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 80:80 --name nginx-reverse-proxy -v ~/nginx-reverse-proxy/www:/usr/share/nginx/html -v ~/nginx-reverse-proxy/conf/nginx.conf:/etc/nginx/nginx.conf -v ~/nginx-reverse-proxy/logs:/var/log/nginx nginx</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装-WEB-服务器-nginx-www"><a href="#安装-WEB-服务器-nginx-www" class="headerlink" title="安装 WEB 服务器 nginx-www"></a>安装 WEB 服务器 nginx-www</h3><p>首先，先<strong>在我们的服务器中的 root 目录下面创建文件夹 nginx-www，并在其中创建三个子文件夹：</strong></p>
+<ul>
+<li>conf</li>
+<li>www</li>
+<li>logs</li>
+</ul>
+<p>接下来，我们<strong>在 conf 文件夹下创建一个文件 nginx.conf</strong>：<em>（其内容如下）</em></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">user  nginx;</span><br><span class="line">worker_processes  1;</span><br><span class="line"></span><br><span class="line">error_log  /var/log/nginx/error.log warn;</span><br><span class="line">pid        /var/run/nginx.pid;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections  1024;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">    include       /etc/nginx/mime.types;</span><br><span class="line">    default_type  application/octet-stream;</span><br><span class="line"></span><br><span class="line">    log_format  main  &#x27;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &#x27;</span><br><span class="line">                      &#x27;$status $body_bytes_sent &quot;$http_referer&quot; &#x27;</span><br><span class="line">                      &#x27;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&#x27;;</span><br><span class="line"></span><br><span class="line">    access_log  /var/log/nginx/access.log  main;</span><br><span class="line"></span><br><span class="line">    sendfile        on;</span><br><span class="line">    #tcp_nopush     on;</span><br><span class="line"></span><br><span class="line">    keepalive_timeout  65;</span><br><span class="line"></span><br><span class="line">    #gzip  on;</span><br><span class="line"></span><br><span class="line">    include /etc/nginx/conf.d/*.conf;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最后，我们运行 docker 命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 90:80 --name nginx-www -v ~/nginx-www/www:/usr/share/nginx/html -v ~/nginx-www/conf/nginx.conf:/etc/nginx/nginx.conf -v ~/nginx-www/logs:/var/log/nginx nginx</span><br></pre></td></tr></table></figure>
+
+<p><strong>去配置安全组，让其可以访问 90 端口</strong></p>
+<h3 id="复制-VUE-的-dist-文件夹中内容，到-nginx-的-www-目录"><a href="#复制-VUE-的-dist-文件夹中内容，到-nginx-的-www-目录" class="headerlink" title="复制 VUE 的 dist 文件夹中内容，到 nginx 的 www 目录"></a><strong>复制 VUE 的 dist 文件夹中内容，到 nginx 的 www 目录</strong></h3><p>我们现在把我们的 vue 项目打包，运行 npm run build，将项目文件下的 dist 文件夹下面的内容复制到目录：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/nginx-www/www/</span><br></pre></td></tr></table></figure>
+
+<p>在 portainer 中重启 container（访问之前的 ip:9000 即可）</p>
+<p><strong>此时我们在浏览器中输入 ip:90，即可看到我们托管的网站。</strong></p>
+<p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/v2-0faff06584836c9b3b0b1a4f6166c8aa_720w.jpg" alt="img"></p>
+<h3 id="安装-WEB-服务器-nginx-cms"><a href="#安装-WEB-服务器-nginx-cms" class="headerlink" title="安装 WEB 服务器 nginx-cms"></a>安装 WEB 服务器 nginx-cms</h3><p>首先，先<strong>在我们的服务器中的 root 目录下面创建文件夹 nginx-cms，并在其中创建三个子文件夹：</strong></p>
+<ul>
+<li>conf</li>
+<li>www</li>
+<li>logs</li>
+</ul>
+<p>接下来，我们<strong>在 conf 文件夹下创建一个文件 nginx.conf</strong>：<em>（其内容如下）</em></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">user  nginx;</span><br><span class="line">worker_processes  1;</span><br><span class="line"></span><br><span class="line">error_log  /var/log/nginx/error.log warn;</span><br><span class="line">pid        /var/run/nginx.pid;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections  1024;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">    include       /etc/nginx/mime.types;</span><br><span class="line">    default_type  application/octet-stream;</span><br><span class="line"></span><br><span class="line">    log_format  main  &#x27;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &#x27;</span><br><span class="line">                      &#x27;$status $body_bytes_sent &quot;$http_referer&quot; &#x27;</span><br><span class="line">                      &#x27;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&#x27;;</span><br><span class="line"></span><br><span class="line">    access_log  /var/log/nginx/access.log  main;</span><br><span class="line"></span><br><span class="line">    sendfile        on;</span><br><span class="line">    #tcp_nopush     on;</span><br><span class="line"></span><br><span class="line">    keepalive_timeout  65;</span><br><span class="line"></span><br><span class="line">    #gzip  on;</span><br><span class="line"></span><br><span class="line">    include /etc/nginx/conf.d/*.conf;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最后，我们运行 docker 命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 100:80 --name nginx-cms -v ~/nginx-cms/www:/usr/share/nginx/html -v ~/nginx-cms/conf/nginx.conf:/etc/nginx/nginx.conf -v ~/nginx-cms/logs:/var/log/nginx nginx</span><br></pre></td></tr></table></figure>
+
+<p><strong>去配置安全组，让其可以访问 100 端口</strong></p>
+<h2 id="第七步：配置反向代理服务器"><a href="#第七步：配置反向代理服务器" class="headerlink" title="第七步：配置反向代理服务器"></a><strong>第七步：配置反向代理服务器</strong></h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">user  nginx;</span><br><span class="line">worker_processes  1;</span><br><span class="line"></span><br><span class="line">error_log  /var/log/nginx/error.log warn;</span><br><span class="line">pid        /var/run/nginx.pid;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections  1024;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">   </span><br><span class="line">   server &#123;  </span><br><span class="line">    listen 80;</span><br><span class="line">    server_name portainer.xxx.org;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">        proxy_set_header   X-Real-IP $remote_addr;</span><br><span class="line">        proxy_set_header   Host      $http_host;</span><br><span class="line">        proxy_pass         http://ip:9000;  //把这里的 ip 换成你自己的公网 ip 地址</span><br><span class="line">    &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   server &#123;  </span><br><span class="line">    listen 80;</span><br><span class="line">    server_name www.xxx.org;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">        proxy_set_header   X-Real-IP $remote_addr;</span><br><span class="line">        proxy_set_header   Host      $http_host;</span><br><span class="line">        proxy_pass         http://ip:90; //把这里的 ip 换成你自己的公网 ip 地址</span><br><span class="line">    &#125;</span><br><span class="line">   &#125;</span><br><span class="line">    </span><br><span class="line">    include       /etc/nginx/mime.types;</span><br><span class="line">    default_type  application/octet-stream;</span><br><span class="line"></span><br><span class="line">    log_format  main  &#x27;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &#x27;</span><br><span class="line">                      &#x27;$status $body_bytes_sent &quot;$http_referer&quot; &#x27;</span><br><span class="line">                      &#x27;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&#x27;;</span><br><span class="line"></span><br><span class="line">    access_log  /var/log/nginx/access.log  main;</span><br><span class="line"></span><br><span class="line">    sendfile        on;</span><br><span class="line">    #tcp_nopush     on;</span><br><span class="line"></span><br><span class="line">    keepalive_timeout  65;</span><br><span class="line"></span><br><span class="line">    #gzip  on;</span><br><span class="line"></span><br><span class="line">    include /etc/nginx/conf.d/*.conf;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当我们修改完 nginx.conf，我们需要使用如下指令让其生效：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker kill -s HUP nginx-reverse-proxy</span><br></pre></td></tr></table></figure>
+
+<p>并且最后需要在 portainer 中重启 container</p>
+<p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/v2-906442feb15dcacf0c4c349d31d53172_720w.jpg" alt="img"></p>
+<p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/v2-bfd84a970994f9d82ca7ee5088d5db51_720w.jpg" alt="img"></p>
+<h2 id="八、总结"><a href="#八、总结" class="headerlink" title="八、总结"></a>八、总结</h2><h3 id="整体流程遵循着一套核心概念"><a href="#整体流程遵循着一套核心概念" class="headerlink" title="整体流程遵循着一套核心概念"></a>整体流程遵循着一套核心概念</h3><p>需求：将多个 WEB 项目，部署在一台服务器上。并且每一个项目，都有一个自己的域名可以访问。</p>
+<p>解决方案：</p>
+<ol>
+<li>购买云服务器，获得 <strong>IP 地址</strong></li>
+<li>购买域名，并<strong>将多个二级域名解析到该 IP 地址上</strong>；（<a target="_blank" rel="noopener" href="http://www.xxx.com-&gt;192.168.0.1;cms.xxx.com-&gt;192.168.0.1;abc.xxx.com-&gt;192.168.0.1)/">www.xxx.com-&gt;192.168.0.1；cms.xxx.com-&gt;192.168.0.1；abc.xxx.com-&gt;192.168.0.1）</a></li>
+<li>利用 Docker 安装 nginx，它运行在服务器的某一个端口上（我们自己指定）</li>
+<li>利用 xshell 或者 finalshell 这种 SSH 软件，将我们的项目传输到上一步安装的 nginx 的静态资源文件夹中，于是我们就可以<strong>用 192.168.0.1:90 这样的「ip地址:端口号」的形式访问到我们的「一个 WEB 项目」了</strong></li>
+<li>当我们访问一个地址如 192.168.0.1 时，我们默认访问的是它的 80 端口</li>
+<li>于是我们可以用 docker 部署多个 nginx 在同一台服务器的非 80 端口上，它们中都部署着不同的 WEB 项目，比如 192.168.0.1:90 中部署的是「官方网站」，192.168.0.1:100 中部署的是「网页游戏」</li>
+<li>最后我们部署一个 nginx 作为「反向代理服务器」在服务器的 80 端口上，在这个<strong>反向代理服务器</strong>中<strong>配置「域名」与「ip：端口号」的对应关系</strong>。（如下图）</li>
+<li>于是我们就可以通过不同域名，访问同一个服务器上部署的不同项目了！就是这样！</li>
+</ol>
+<p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/v2-364bf60b346257b3b6fe4bd26936422b_720w.jpg" alt="img"></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nginx/" rel="tag">nginx</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2020/11/02/%E9%85%8D%E7%BD%AEIDEA%E8%87%AA%E5%B8%A6Maven%E6%8F%92%E4%BB%B6%E7%9A%84%E9%95%9C%E5%83%8F%E6%BA%90/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            如何配置IDEA自带Maven插件的镜像源（找不到settings.xml）
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/09/10/CentOS7%E6%9C%80%E5%B0%8F%E5%8C%96%E5%AE%89%E8%A3%85%E5%90%8E%EF%BC%8Cifconfig%E5%91%BD%E4%BB%A4%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8command%20not%20found/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">CentOS7最小化安装后，ifconfig命令无法使用command not found</div>
+      </a>
+    
+  </nav>
+
+  
+   
+    
+    <script src="https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: "twikoo-1g1qdkfbe66b69e9"
+        })
+    </script>
+ 
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2021
+        <i class="ri-heart-fill heart_icon"></i> Doke
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/iron_man_128.png" alt="Code for Fun"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>

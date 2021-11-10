@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta name="google-site-verification" content="MpwZIdsTEysuFEaNNe5aUPoa74MyT5SuAqx-BTB8Iyw" />
+      <meta name="baidu-site-verification" content="code-gVPupWe19u" />
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>Git学习笔记(Learn Git  Branch) |  Code for Fun</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/iron_man_128.png" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    </head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-Git学习笔记(Learn Git  Branch)"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  Git学习笔记(Learn Git  Branch)
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/10/13/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(Learn%20Git%20%20Branch)/" class="article-date">
+  <time datetime="2021-10-12T16:00:00.000Z" itemprop="datePublished">2021-10-13</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Git/">Git</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">1.3k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">4 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p><strong>待更新</strong></p>
+<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p><a target="_blank" rel="noopener" href="https://learngitbranching.js.org/">官网</a></p>
+<p>参考：<a target="_blank" rel="noopener" href="http://www.jnnr.cn/news_show_806.html">http://www.jnnr.cn/news_show_806.html</a></p>
+<p>通过该游戏来体验学习Git的各种命令，不仅可以很好的学习git的思想（可视化非常形象，和git bash那个黑框的感觉完全不一样）。</p>
+<p>而且英文官网还可以进一步锻炼专业相关英文阅读能力，词汇也很简单。</p>
+<p>十分推荐。</p>
+<h2 id="一、基础篇（git主要命令）"><a href="#一、基础篇（git主要命令）" class="headerlink" title="一、基础篇（git主要命令）"></a>一、基础篇（git主要命令）</h2><h3 id="1-git-commit"><a href="#1-git-commit" class="headerlink" title="1. git commit"></a>1. git commit</h3><blockquote>
+<p><strong>功能</strong>：将增量修改的内容进行提交<br><strong>示例</strong>：（解释：C0、C1是分开的两次提交记录，其中C0 是C1 父分支，即C1是基于C0增量修改提交的，MAIN意思是箭头指向的之处的分支线叫MAIN分支，其标指向的就是该分支最新的提交处，其中*号意思是你目前正在操作的分支，是一个标记。）<br><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/20210430141208400.png" alt="在这里插入图片描述"><br><code>GIT COMMIT</code> 之后<br><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/20210430141323569.png" alt="在这里插入图片描述"><br>此时增加C2提交记录，且是基于C1的，仍然是MAIN分支线上的延申。</p>
+</blockquote>
+<blockquote>
+<p>游戏答案：<br><code>GIT COMMIT</code><br><code>GIT COMMIT</code></p>
+</blockquote>
+<h3 id="2-git-branch-分支名-git-checkout-分支名"><a href="#2-git-branch-分支名-git-checkout-分支名" class="headerlink" title="2. git branch 分支名 | git checkout 分支名"></a>2. git branch 分支名 | git checkout 分支名</h3><blockquote>
+<p><strong>- GIT BRANCH 分支名 -</strong><br><strong>功能</strong> ：即在现在的分支线上开辟另一个分支（有点像开一个分叉树枝的芽），在该节点之前的内容都是相同的，之后提交的内容就只能在一个分支上延申。<br><strong>示例</strong>：<br><img src="https://img-blog.csdnimg.cn/20210430164519324.png" alt="在这里插入图片描述"><br><code>GIT BRANCH NEWIMAGE</code><br><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/20210430164716276.png" alt="在这里插入图片描述"><br>（解释：我们可以看到现在多了一个NEWIMAGE分支，但是因为我们只是新建分支，也就是多了一个芽而没有树干，所以两个分支都在C1处。<br>此时如果我们输入<br><code>GIT COMMIT</code><br><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/20210430165038889.png" alt="在这里插入图片描述"><br>MAIN分支往前一步，当前分支还是MAIN，NEWIMAGE还是在C1处</p>
+</blockquote>
+<blockquote>
+<p><strong>- GIT CHECKOUT 分支名 -</strong><br><strong>功能</strong> ：切换当前操作的分支到特定分支名。<br><strong>示例</strong>：（当前是MAIN分支）<br><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/20210430170339533.png" alt="在这里插入图片描述"><br><code>GIT CHECKOUT NEWIMAGE</code><br><code>GIT COMMIT</code><br><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/2021043017045152.png" alt="在这里插入图片描述"></p>
+</blockquote>
+<blockquote>
+<p>最后其实还有个快捷键：<strong>GIT CHECKOUT -B 分支名</strong> 实现创建分支的同时切换该分支为当前操作分支</p>
+</blockquote>
+<blockquote>
+<p>游戏答案：<br><code>GIT CHECKOUT -B BUGFIX</code></p>
+</blockquote>
+<h3 id="3-git-merge-分支名-git-rebasse-分支名"><a href="#3-git-merge-分支名-git-rebasse-分支名" class="headerlink" title="3. git merge 分支名 | git rebasse 分支名"></a>3. git merge 分支名 | git rebasse 分支名</h3><blockquote>
+<p><strong>- GIT MERGE 分支名 -</strong><br><strong>功能</strong>：将当前分支和另一个指定分支合并,可能会产生新的结点，也可能不会，看下面示例。<br><strong>示例</strong>：<br><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/20210502002301797.png" alt="在这里插入图片描述"><br><code>GIT MERGE BUGFIX</code><br><img src="https://img-blog.csdnimg.cn/20210502002417659.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkwNTM4Nw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><code>GIT CHECKOUT BUGFIX</code><br><code>GIT MERGE MAIN</code><br><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/20210502002821276.png" alt="在这里插入图片描述"></p>
+</blockquote>
+<blockquote>
+<p>GIT MERGE游戏答案：<br><code>GIT CHECKOUT -B BUGFIX</code><br><code>GIT COMMIT</code><br><code>GIT CHECKOUT MAIN</code><br><code>GIT COMMIT</code><br><code>GIT MERGE BUGFIX</code></p>
+</blockquote>
+<blockquote>
+<p><strong>GIT REBASE 分支名</strong><br><strong>作用</strong>：即将当前的分支合并到另一分支，但是合并的方式不是多一个结点，而是将当前分支的所有多出来的修改全部加到另一个分支，这时整体上看只有一条线性发展。而不是分开同步运行后合并的视角，而是将并行转化成前后的同步关系<br><strong>示例</strong>：<br><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/20210502003838644.png" alt="在这里插入图片描述"><br><code>GIT REBASE MAIN</code><br><img src="https://img-blog.csdnimg.cn/20210502004018158.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkwNTM4Nw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><code>GIT CHECKOUT MAIN</code><br><code>GIT REBASE BUGFIX</code><br><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/20210502004138102.png" alt="在这里插入图片描述"></p>
+</blockquote>
+<h2 id="二、高级篇"><a href="#二、高级篇" class="headerlink" title="二、高级篇"></a>二、高级篇</h2><h3 id="1-分离HEAD（git-checkout-记录结点名）"><a href="#1-分离HEAD（git-checkout-记录结点名）" class="headerlink" title="1. 分离HEAD（git checkout 记录结点名）"></a>1. 分离HEAD（git checkout 记录结点名）</h3><blockquote>
+<p>作用：分离HEAD，就是我们可以操作的当前位置不再是对分支而是可以对某次记录也就是结点。<br>解释：HEAD默认就是指向分支名的，即我们看到的*指向的分支，当我们分支COMMIT后，我们HEAD会往前走，分支便也会自动往前走，而如果我们指向具体历史记录COMMIT后，HEAD往前走，分支原地不动，这就是分离HEAD脱离了分支。<br>即原本 HEAD-&gt;MAIN分支-&gt;C1结点 变成 HEAD-&gt;C1 这就是分离<br>示例：<br><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/20210502021601952.png" alt="在这里插入图片描述"><br><code>GIT CHECKOUT MAIN</code><br><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/20210502021635428.png" alt="在这里插入图片描述"><br>没有变化，因为HEAD-&gt;BUGFIX-&gt;C4，即使GIT COMMIT两者同步向前<br><code>GIT CHECKOUT C4</code><br><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/20210502021821396.png" alt="在这里插入图片描述"><br>HEAD-&gt;C4 分离开来<br><code>GIT COMMIT</code><br><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/20210502021901308.png" alt="在这里插入图片描述"><br>HEAD会往前走，但分支不会动</p>
+</blockquote>
+<h3 id="2-相对引用（git-checkout-分支名-git-checkout-分支名-num）"><a href="#2-相对引用（git-checkout-分支名-git-checkout-分支名-num）" class="headerlink" title="2. 相对引用（git checkout 分支名^ | git checkout 分支名~num）"></a>2. 相对引用（git checkout 分支名^ | git checkout 分支名~num）</h3><blockquote>
+<p><strong>作用</strong>：分离HEAD的时候可以通过当前分支相对的移动，这样我们可以不用记住某结点哈希值（可以通过GIT LOG查看）。这里说一说结点哈希值是什么，我们会发现我们之前分支名都是C1之类的，其实C1只是这个结点哈希值的头两个值，但因为具有区分唯一性，所以我们可以只打开头两个字符，全名可能是：C4D2DA64C0EFC5293610BDD892F82A58E8CBC5D8。所以相对引用就是HEAD的设置不根据哈希值来确定，可以通过相对位置确定。因为分支名字相对于结点名字更加的容易记住和使用。<br><strong>示例：</strong><br><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/20210502170848565.png" alt="在这里插入图片描述"><br><code>GIT CHECKOUT MAIN^</code><br><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/20210502170931538.png" alt="在这里插入图片描述"><br>第二个例子：<br><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/20210502171007451.png" alt="在这里插入图片描述"><br><code>GIT CHECKOUT C3</code><br><code>GIT CHECKOUT HEAD^</code><br><code>GIT CHECKOUT HEAD^</code><br><code>GIT CHECKOUT HEAD^</code><br><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/2021050217113472.png" alt="在这里插入图片描述"><br>第三个示例：<br><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/20210502171906390.png" alt="在这里插入图片描述"><br><code>GIT CHECKOUT HEAD~4</code><br><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/20210502171943381.png" alt="在这里插入图片描述"><br>第四个示例：<br><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/20210502172218585.png" alt="在这里插入图片描述"><br><code>GIT BRANCH -F MAIN HEAD~3</code><br>相对引用为我们提供了一种简洁的引用提交记录 C1 的方式， 而 -F 则容许我们将分支强制移动到那个位置。<br><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/20210502172512903.png" alt="在这里插入图片描述"></p>
+</blockquote>
+<blockquote>
+<p>第一个游戏答案：<br><code>GTI CHECKOUT BUGFIX^</code><br>第二个游戏答案：<br><code>GIT CHECKOUT HEAD^</code><br><code>GIT BRANCH -F MAIN C6</code><br><code>GIT BRANCH -F BUGFIX HEAD^</code></p>
+</blockquote>
+<p>第二个游戏：</p>
+<p>题目：</p>
+<p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211009223958622.png" alt="image-20211009223958622"></p>
+<p>Goal：</p>
+<p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211009224016584.png" alt="image-20211009224016584"></p>
+<ul>
+<li>首先移动HEAD </li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout HEAD^</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>然后转移分支main</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -f main C6</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>最后移动分支bugFix</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git branch -f bugFix HEAD^</span><br><span class="line">或者</span><br><span class="line">git branch -f bugFix HEAD~1</span><br><span class="line">或者</span><br><span class="line">git branch -f bugFix C0</span><br></pre></td></tr></table></figure>
+
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/" rel="tag">Git</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2021/10/16/java%E5%B8%B8%E7%94%A8%E7%B1%BB/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            java常用类
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2021/10/10/MySQL/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">MySQL</div>
+      </a>
+    
+  </nav>
+
+  
+   
+    
+    <script src="https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: "twikoo-1g1qdkfbe66b69e9"
+        })
+    </script>
+ 
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2021
+        <i class="ri-heart-fill heart_icon"></i> Doke
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/iron_man_128.png" alt="Code for Fun"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>
