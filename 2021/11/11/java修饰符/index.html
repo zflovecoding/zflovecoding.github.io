@@ -111,8 +111,7 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p>java中有多种修饰符，主要分为<strong>访问修饰符</strong>和<strong>非访问修饰符</strong>，修饰符的主要作用是</p>
-<p>定义类，方法和变量。</p>
+  <p>java中有多种修饰符，主要分为<strong>访问修饰符</strong>和<strong>非访问修饰符</strong>，修饰符的主要作用是定义类，方法和变量。</p>
 <h2 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h2><p>访问修饰符是最常用的，每天写java语句只要定义变量，创建实例就会涉及到。主要有以下四个访问修饰符。</p>
 <ul>
 <li>public：公开的，对所有类可见。适用对象：类，变量，接口，方法</li>
@@ -120,12 +119,12 @@
 <li>default：就是我们正常不写修饰符的默认选项。在同一包内可见。适用：类，变量，接口，方法</li>
 <li>protected：受保护的，同一包内的类和所有子类可访问。适用：变量，方法。<strong>不可以修饰类（外部类）</strong></li>
 </ul>
-<p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211111090437287.png" alt="image-20211111090437287"></p>
+<p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211111090437287.png" alt="四种访问修饰符的权限"></p>
 <p><strong>注意：</strong></p>
 <p>protected可见性在于两点：</p>
 <ul>
 <li>基类的 protected 成员是包内可见的，并且对子类可见；</li>
-<li>==若子类与基类不在同一包中，那么在子类中，子类实例可以访问其从基类继承而来的protected方法，而不能访问基类实例的protected方法。==</li>
+<li><strong>若子类与基类不在同一包中，那么在子类中，子类实例可以访问其从基类继承而来的protected方法，而不能访问基类实例的protected方法。</strong></li>
 </ul>
 <p>例子：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> p2;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyObject2</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> Object <span class="title">clone</span><span class="params">()</span> <span class="keyword">throws</span> CloneNotSupportedException</span>&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">super</span>.clone();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">package</span> p22;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test2</span> <span class="keyword">extends</span> <span class="title">MyObject2</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">       MyObject2 obj = <span class="keyword">new</span> MyObject2();</span><br><span class="line">       obj.clone(); <span class="comment">// Compile Error         ----（1）</span></span><br><span class="line"> </span><br><span class="line">       Test2 tobj = <span class="keyword">new</span> Test2();</span><br><span class="line">       tobj.clone(); <span class="comment">// Complie OK         ----（2）</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -160,7 +159,7 @@
 <p><code>public synchronized void show()&#123;&#125;</code> </p>
 <h3 id="volatile"><a href="#volatile" class="headerlink" title="volatile:"></a>volatile:</h3><p>volatile 修饰的成员变量在每次被线程访问时，都强制从共享内存中重新读取该成员变量的值。而且，当成员变量发生变化时，会强制线程将变化值回写到共享内存。这样在任何时刻，两个不同的线程总是看到某个成员变量的同一个值。</p>
 <p>一个 volatile 对象引用可能是 null。</p>
-<h3 id="transient"><a href="#transient" class="headerlink" title="transient:"></a>transient:</h3><p>参考：<a target="_blank" rel="noopener" href="https://zflovecoding.github.io/2021/11/06/java%E5%BA%8F%E5%88%97%E5%8C%96%E5%8F%8Atransient%E5%85%B3%E9%94%AE%E5%AD%97/">https://zflovecoding.github.io/2021/11/06/java%E5%BA%8F%E5%88%97%E5%8C%96%E5%8F%8Atransient%E5%85%B3%E9%94%AE%E5%AD%97/</a></p>
+<h3 id="transient"><a href="#transient" class="headerlink" title="transient:"></a>transient:</h3><p>详见：<a target="_blank" rel="noopener" href="https://zflovecoding.github.io/2021/11/06/java%E5%BA%8F%E5%88%97%E5%8C%96%E5%8F%8Atransient%E5%85%B3%E9%94%AE%E5%AD%97/">https://zflovecoding.github.io/2021/11/06/java%E5%BA%8F%E5%88%97%E5%8C%96%E5%8F%8Atransient%E5%85%B3%E9%94%AE%E5%AD%97/</a></p>
 <h2 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h2><p><a target="_blank" rel="noopener" href="https://www.runoob.com/java/java-modifier-types.html">https://www.runoob.com/java/java-modifier-types.html</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/java-protected-keyword-detailed-explanation.html">https://www.runoob.com/w3cnote/java-protected-keyword-detailed-explanation.html</a></p>
  
@@ -193,19 +192,10 @@
    
   <nav class="article-nav">
     
+    
       <a href="/2021/11/11/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            动态规划
-          
-        </div>
-      </a>
-    
-    
-      <a href="/2021/11/10/20211110-hexo-d%E9%83%A8%E7%BD%B2%E7%AA%81%E7%84%B6%E5%87%BA%E7%8E%B0%E9%97%AE%E9%A2%98/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">hexo d部署突然出现问题</div>
+        <div class="article-nav-title">动态规划</div>
       </a>
     
   </nav>
