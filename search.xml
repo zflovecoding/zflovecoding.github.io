@@ -91,7 +91,12 @@
   <entry>
     <title>动态规划</title>
     <url>/2021/11/11/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<p>动态规划是怎么解决问题的：状态转移方程，最优子结构</p>
+<p>思考状态转移方程：</p>
+<p><strong>明确「状态」 -&gt; 定义 dp 数组/函数的含义 -&gt; 明确「选择」-&gt; 明确 base case。</strong></p>
+<p>动态规划问题一定会<strong>具备「最优子结构」</strong>，才能通过子问题的最值得到原问题的最值。</p>
+<p>通过备忘录，dp table优化递归树</p>
+]]></content>
       <categories>
         <category>算法</category>
       </categories>
@@ -100,8 +105,52 @@
       </tags>
   </entry>
   <entry>
+    <title>向Github添加公钥</title>
+    <url>/2021/11/11/%E5%90%91Github%E6%B7%BB%E5%8A%A0%E5%85%AC%E9%92%A5/</url>
+    <content><![CDATA[<p><strong>首先需要明确的是我们为什么要这么做？</strong></p>
+<p>Git使用https协议，每次在pull, push都要输入密码，相对来说比较麻烦，但是使用git协议，然后使用ssh密钥提交，就可以可以省去每次都输密码的繁琐，同时也能保证安全性。</p>
+<p>原理大概如下：公钥我们提交给服务器（也就是Github),到时候服务器在权限中加入提交的公钥,之后当我从远地仓库中下载项目/提交项目到远程仓库的时候,服务器通过绑定的公钥来匹配我们的私钥，如果匹配，则就可以正常下，反之则失败。</p>
+<p>大多数 Git 服务器都会选择使用 SSH 公钥来进行授权。系统中的每个用户都必须提供一个公钥用于授权，没有的话就要生成一个。</p>
+<h2 id="生成SSH-Key"><a href="#生成SSH-Key" class="headerlink" title="生成SSH Key"></a>生成SSH Key</h2><p>首先查看一下之前是否生成过SSH key，<code>cd ~/.ssh</code>,如果存在id_rsa,id_rsa.pub,known_hosts等文件，说明已经生成过公钥了，保存在id_rsa.pub中。</p>
+<p>如果没有则生成，命令如下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;email@email.com&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：其中”<a href="mailto:&#x65;&#109;&#x61;&#105;&#108;&#x40;&#101;&#109;&#97;&#105;&#x6c;&#x2e;&#99;&#111;&#x6d;">&#x65;&#109;&#x61;&#105;&#108;&#x40;&#101;&#109;&#97;&#105;&#x6c;&#x2e;&#99;&#111;&#x6d;</a>“是GitHub账号。</strong></p>
+<p>过程中一路enter就可以了，文件会保存在<code>~/.ssh</code>目录下，id_rsa是你的私钥，id_rsa.pub是公钥。</p>
+<h2 id="添加到Github"><a href="#添加到Github" class="headerlink" title="添加到Github"></a>添加到Github</h2><p>拷贝公钥：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+
+<p>之后复制，或者直接：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pbcopy &lt; ~/.ssh/id_rsa.pub<span class="comment">#复制到剪贴版</span></span><br></pre></td></tr></table></figure>
+
+<p>打开<code>Github网站</code> -&gt; <code>Settings</code> -&gt; <code>SSH And GPG Keys</code></p>
+<ol>
+<li>点击<code>New SSH Key</code>按钮</li>
+<li>添加<code>Title</code>和<code>Key</code><ul>
+<li><code>Title</code>: 随便输入 </li>
+<li><code>Key</code>: 粘贴即可</li>
+</ul>
+</li>
+<li>重新输入Github的密码</li>
+</ol>
+<h2 id="测试连接"><a href="#测试连接" class="headerlink" title="测试连接"></a>测试连接</h2> <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<p>输出类似如下内容，证明添加成功！</p>
+<p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211111154523133.png" alt="image-20211111154523133"></p>
+<h2 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h2><p><a href="https://blog.csdn.net/fenghuibian/article/details/73350890">https://blog.csdn.net/fenghuibian/article/details/73350890</a></p>
+<p> <a href="https://www.jianshu.com/p/e93edea128a3">https://www.jianshu.com/p/e93edea128a3</a></p>
+]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+        <tag>Github</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo d部署突然出现问题</title>
-    <url>/2021/11/10/20211110-hexo-d%E9%83%A8%E7%BD%B2%E7%AA%81%E7%84%B6%E5%87%BA%E7%8E%B0%E9%97%AE%E9%A2%98/</url>
+    <url>/2021/11/10/hexo-d%E9%83%A8%E7%BD%B2%E7%AA%81%E7%84%B6%E5%87%BA%E7%8E%B0%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>hexo</category>

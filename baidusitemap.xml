@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://example.com/2021/11/11/java%E4%BF%AE%E9%A5%B0%E7%AC%A6/</loc>
+    <loc>http://example.com/2021/11/11/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</loc>
     <lastmod>2021-11-11</lastmod>
   </url>
   <url>
-    <loc>http://example.com/2021/11/11/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</loc>
-    <lastmod>2021-11-10</lastmod>
+    <loc>http://example.com/2021/11/11/%E5%90%91Github%E6%B7%BB%E5%8A%A0%E5%85%AC%E9%92%A5/</loc>
+    <lastmod>2021-11-11</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2021/11/11/java%E4%BF%AE%E9%A5%B0%E7%AC%A6/</loc>
+    <lastmod>2021-11-11</lastmod>
   </url>
   <url>
     <loc>http://example.com/2021/10/30/C%20Pointer/</loc>
@@ -17,7 +21,7 @@
     <lastmod>2021-11-10</lastmod>
   </url>
   <url>
-    <loc>http://example.com/2021/11/10/20211110-hexo-d%E9%83%A8%E7%BD%B2%E7%AA%81%E7%84%B6%E5%87%BA%E7%8E%B0%E9%97%AE%E9%A2%98/</loc>
+    <loc>http://example.com/2021/11/10/hexo-d%E9%83%A8%E7%BD%B2%E7%AA%81%E7%84%B6%E5%87%BA%E7%8E%B0%E9%97%AE%E9%A2%98/</loc>
     <lastmod>2021-11-10</lastmod>
   </url>
   <url>
