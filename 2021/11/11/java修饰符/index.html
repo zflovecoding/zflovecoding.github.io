@@ -13,7 +13,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>categories |  Code for Fun</title>
+      <title>java修饰符 |  Code for Fun</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/iron_man_128.png" />
@@ -55,12 +55,174 @@
       
     <main class="content on">
       <section class="outer">
+  <article
+  id="post-java修饰符"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  java修饰符
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/11/11/java%E4%BF%AE%E9%A5%B0%E7%AC%A6/" class="article-date">
+  <time datetime="2021-11-10T16:00:00.000Z" itemprop="datePublished">2021-11-11</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
   
-    <h1 class="page-type-title">分类</h1>
-    <div class="categories-box">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MIT6-S081/">MIT6.S081</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SSM%E6%A1%86%E6%9E%B6/">SSM框架</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SpringBoot/">SpringBoot</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javaweb/">javaweb</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B0%8F%E9%97%AE%E9%A2%98/">小问题</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BD%91%E7%AB%99/">网站</a><span class="category-list-count">2</span></li></ul>
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">1k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">3 分钟</span>
+        </span>
+    </span>
+</div>
+ 
     </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
   
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p>java中有多种修饰符，主要分为<strong>访问修饰符</strong>和<strong>非访问修饰符</strong>，修饰符的主要作用是</p>
+<p>定义类，方法和变量。</p>
+<h2 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h2><p>访问修饰符是最常用的，每天写java语句只要定义变量，创建实例就会涉及到。主要有以下四个访问修饰符。</p>
+<ul>
+<li>public：公开的，对所有类可见。适用对象：类，变量，接口，方法</li>
+<li>private：私有的，只有同一类内可见。适用对象：变量，方法。<strong>不可以修饰类（外部类）</strong></li>
+<li>default：就是我们正常不写修饰符的默认选项。在同一包内可见。适用：类，变量，接口，方法</li>
+<li>protected：受保护的，同一包内的类和所有子类可访问。适用：变量，方法。<strong>不可以修饰类（外部类）</strong></li>
+</ul>
+<p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211111090437287.png" alt="image-20211111090437287"></p>
+<p><strong>注意：</strong></p>
+<p>protected可见性在于两点：</p>
+<ul>
+<li>基类的 protected 成员是包内可见的，并且对子类可见；</li>
+<li>==若子类与基类不在同一包中，那么在子类中，子类实例可以访问其从基类继承而来的protected方法，而不能访问基类实例的protected方法。==</li>
+</ul>
+<p>例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> p2;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyObject2</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> Object <span class="title">clone</span><span class="params">()</span> <span class="keyword">throws</span> CloneNotSupportedException</span>&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">super</span>.clone();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">package</span> p22;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test2</span> <span class="keyword">extends</span> <span class="title">MyObject2</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">       MyObject2 obj = <span class="keyword">new</span> MyObject2();</span><br><span class="line">       obj.clone(); <span class="comment">// Compile Error         ----（1）</span></span><br><span class="line"> </span><br><span class="line">       Test2 tobj = <span class="keyword">new</span> Test2();</span><br><span class="line">       tobj.clone(); <span class="comment">// Complie OK         ----（2）</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>对于(1),clone()来自MyProject2本身，可见性是包p2和其子类，Test2是它的子类，但是不可以访问基类的protected方法clone()</p>
+<p>对于(2),tobj访问的是本身从基类继承来的clone()。</p>
+<p>更多实例见参考2.</p>
+<p><strong>修饰符继承规则：</strong></p>
+<ul>
+<li>父类中public方法，子类必须为public</li>
+<li>父类中protected方法，子类protected或者public</li>
+<li>父类中private方法，不可继承</li>
+</ul>
+<h2 id="非访问修饰符"><a href="#非访问修饰符" class="headerlink" title="非访问修饰符"></a>非访问修饰符</h2><ul>
+<li>static: 修饰类方法与类变量。</li>
+<li>final：修饰类，方法，变量。修饰的类不可被继承；方法不可被继承类重新定义；变量为常量，不可更改。</li>
+<li>abstract: 修饰抽象类和抽象方法。</li>
+<li>synchronized：声明的方法同一时间只能被一个线程访问。</li>
+<li>volatile：修饰的成员变量每次被线程访问，都强制从内存中重新读取该成员变量的值。</li>
+<li>transient：序列化的对象中被 transient 修饰的实例变量会被JVM跳过该特定的变量。</li>
+</ul>
+<h3 id="static："><a href="#static：" class="headerlink" title="static："></a>static：</h3><p><strong>类变量：</strong>和类一起加载，一起毁灭。类变量（静态变量）只有一份拷贝，无论该类实例化多少对象，是共享的。局部变量不可以被声明为static。</p>
+<p><strong>类方法：</strong>独立于对象，也叫静态方法，不能使用类的非静态变量，从参数列表得到数据再计算。</p>
+<p>使用<code>类名.变量名</code>/<code>类名.方法名</code>访问。</p>
+<h3 id="final"><a href="#final" class="headerlink" title="final:"></a>final:</h3><p>被 final 修饰的实例变量必须显式指定初始值。通常和 static 修饰符一起使用来创建类常量。</p>
+<p>父类中的 final 方法可以被子类继承，但是不能被子类重写。</p>
+<p>声明 final 方法的主要目的是防止该方法的内容被修改。</p>
+<h3 id="abstract"><a href="#abstract" class="headerlink" title="abstract:"></a>abstract:</h3><p>抽象类不能用来实例化对象，声明抽象类的唯一目的是为了将来对该类进行扩充。</p>
+<p>包含抽象方法的类必须是抽象类。</p>
+<p>抽象类可以包含抽象方法和非抽象方法。</p>
+<h3 id="synchronized"><a href="#synchronized" class="headerlink" title="synchronized:"></a>synchronized:</h3><p>synchronized 修饰符可以应用于四个访问修饰符。常用于控制线程安全，之后会单写一篇博客介绍synchronized。</p>
+<p><code>public synchronized void show()&#123;&#125;</code> </p>
+<h3 id="volatile"><a href="#volatile" class="headerlink" title="volatile:"></a>volatile:</h3><p>volatile 修饰的成员变量在每次被线程访问时，都强制从共享内存中重新读取该成员变量的值。而且，当成员变量发生变化时，会强制线程将变化值回写到共享内存。这样在任何时刻，两个不同的线程总是看到某个成员变量的同一个值。</p>
+<p>一个 volatile 对象引用可能是 null。</p>
+<h3 id="transient"><a href="#transient" class="headerlink" title="transient:"></a>transient:</h3><p>参考：<a target="_blank" rel="noopener" href="https://zflovecoding.github.io/2021/11/06/java%E5%BA%8F%E5%88%97%E5%8C%96%E5%8F%8Atransient%E5%85%B3%E9%94%AE%E5%AD%97/">https://zflovecoding.github.io/2021/11/06/java%E5%BA%8F%E5%88%97%E5%8C%96%E5%8F%8Atransient%E5%85%B3%E9%94%AE%E5%AD%97/</a></p>
+<h2 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h2><p><a target="_blank" rel="noopener" href="https://www.runoob.com/java/java-modifier-types.html">https://www.runoob.com/java/java-modifier-types.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/java-protected-keyword-detailed-explanation.html">https://www.runoob.com/w3cnote/java-protected-keyword-detailed-explanation.html</a></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2021/11/11/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            动态规划
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2021/11/10/20211110-hexo-d%E9%83%A8%E7%BD%B2%E7%AA%81%E7%84%B6%E5%87%BA%E7%8E%B0%E9%97%AE%E9%A2%98/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">hexo d部署突然出现问题</div>
+      </a>
+    
+  </nav>
+
+  
+   
+    
+    <script src="https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: "twikoo-1g1qdkfbe66b69e9"
+        })
+    </script>
+ 
+</article>
+
 </section>
       <footer class="footer">
   <div class="outer">
@@ -197,6 +359,22 @@
 <script src="/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
 <link
