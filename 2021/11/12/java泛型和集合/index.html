@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta name="google-site-verification" content="MpwZIdsTEysuFEaNNe5aUPoa74MyT5SuAqx-BTB8Iyw" />
+      <meta name="baidu-site-verification" content="code-gVPupWe19u" />
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>java集合和泛型(一)---集合篇 |  Code for Fun</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/iron_man_128.png" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    </head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-java泛型和集合"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  java集合和泛型(一)---集合篇
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/11/12/java%E6%B3%9B%E5%9E%8B%E5%92%8C%E9%9B%86%E5%90%88/" class="article-date">
+  <time datetime="2021-11-11T16:00:00.000Z" itemprop="datePublished">2021-11-12</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">2.1k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">8 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><h2 id="写在前面："><a href="#写在前面：" class="headerlink" title="写在前面："></a>写在前面：</h2><p>一直对java集合久仰大名，但却不太知道java语言中的集合究竟是什么？究竟是为了解决什么问题？</p>
+<p>翻阅《Java核心技术卷一：基础知识》，我们知道，java集合是实现对传统数据结构封装的类库，便于我们更加方便地使用传统数据结构进行软件开发，而不用去关注底层数据结构的具体实现，<del>(当然如果你像我一样准备面试的话还是要了解的)</del>，属于是一种黑盒，同时由于java设计者的高超水平，还为我们提供了一系列方便易用的方法实现基本操作，这也是java类库如此吸引人的一个原因。</p>
+<p>只想简单的使用集合CRUD是非常简单易学的，本文试图在韩顺平老师的讲解下总结设计底层源码的知识，也会不断完善和补充。</p>
+<p><strong>引言：</strong></p>
+<p>简单地来说，数组也是一个集合，但是数组和集合又有什么区别呢？集合有什么特点呢？</p>
+<p>首先：</p>
+<ul>
+<li>数组是固定长度的；集合可变长度的。</li>
+<li>数组可以存储基本数据类型，也可以存储引用数据类型；集合只能存储引用数据类型。</li>
+<li>数组存储的元素必须是同一个数据类型；集合存储的对象可以是不同数据类型。</li>
+</ul>
+<p>集合的特点为：</p>
+<ul>
+<li>对象封装数据，对象多了也需要存储。集合用于存储对象。</li>
+<li>对象的个数确定可以使用数组，对象的个数不确定的可以用集合。因为集合是可变长度的。</li>
+</ul>
+<p>由以上两点我们可以知道集合框架中存储的都是引用对象，也就是Object类及其子类，故我们的基本数据类型在集合中要使用对应的封装类。</p>
+<p><strong>使用集合框架的好处:</strong></p>
+<ol>
+<li>容量自增长；</li>
+<li>提供了高性能的数据结构和算法，使编码更轻松，提高了程序速度和质量；</li>
+<li>允许不同 API 之间的互操作，API之间可以来回传递集合；</li>
+<li>可以方便地扩展或改写集合，提高代码复用性和可操作性。</li>
+<li>通过使用JDK自带的集合类，可以降低代码维护和学习新API成本。</li>
+</ol>
+<h2 id="框架体系："><a href="#框架体系：" class="headerlink" title="框架体系："></a>框架体系：</h2><p>本文整理自韩顺平老师的<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1YA411T76k?spm_id_from=333.999.0.0">集合专题</a>,强推一手。</p>
+<p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211004183958803.png" alt="集合框架体系图"></p>
+<p>本图还需补充的常见集合为：ConcurrentHashMap…</p>
+<h3 id="单列集合（Collection）："><a href="#单列集合（Collection）：" class="headerlink" title="单列集合（Collection）："></a>单列集合（Collection）：</h3><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211004185133933.png" alt="单列集合框架体系"></p>
+<h3 id="双列集合（Map）：K-V"><a href="#双列集合（Map）：K-V" class="headerlink" title="双列集合（Map）：K-V"></a>双列集合（Map）：K-V</h3><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211112085310916.png" alt="双列集合框架体系"></p>
+<h2 id="Collection接口和常用方法"><a href="#Collection接口和常用方法" class="headerlink" title="Collection接口和常用方法"></a>Collection接口和常用方法</h2><p>为了避免本文过于冗杂，接口的常用方法参考jdk1.8的官网<a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/8/docs/api/">API文档</a>.</p>
+<p>此处仅说明一下遍历方式。</p>
+<p>Iteratir对象称为<strong>迭代器</strong>，主要用于遍历Collection集合中的元素，如图可见Collection接口下的子接口都实现了Iterator。</p>
+<p>执行效果如下；</p>
+<p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211112091344414.png" alt="迭代器的执行原理"></p>
+<p>我们通常不使用此方式遍历集合，因为<strong>增强for循环</strong>（for-each），就是简化版的iterator，本质一样。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(Object obj: col)&#123;</span><br><span class="line">    System.out.println(obj);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="List接口"><a href="#List接口" class="headerlink" title="List接口"></a>List接口</h2><p>一个有序（元素存入集合的顺序和取出的顺序一致）的容器，元素可以重复，可以插入多个null元素，元素都有索引。常用的实现类有 ArrayList、LinkedList 和 Vector。</p>
+<p>常用方法同样建议查阅官方文档，可使用iterator，增强for，普通for遍历。</p>
+<h3 id="ArrayList底层机制和源码分析"><a href="#ArrayList底层机制和源码分析" class="headerlink" title="ArrayList底层机制和源码分析"></a>ArrayList底层机制和源码分析</h3><p>ArrayList中可以加入重复元素，可以加入null（同样可多个），是由<strong>数组</strong>实现数据存储的，<strong>线程不安全</strong>，多线程情况下不建议使用，但执行<strong>效率高</strong>，非常<strong>常用</strong>。</p>
+<p><strong>ArrayList底层操作机制源码分析：</strong></p>
+<p>结论：</p>
+<ul>
+<li>ArrayList中维护了一个Object类型的数组elementData。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">transient</span> Object[] elementData;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>当创建ArrayList对象时，如果使用的是无参构造器，则初始化数组容量为0，第一次添加则扩容elementData为10，如果需要再次扩容，则扩容elementData为1.5倍。</li>
+<li>如果使用的是指定大小的构造器，则初始化为指定大小，需要扩容则扩容为1.5倍。</li>
+</ul>
+<p><strong>强烈建议自己debug一遍创建和扩容的源码</strong></p>
+<p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211112101346805.png" alt="ArrayList扩容源码1"></p>
+<p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211112101409259.png" alt="ArrayList扩容源码2"></p>
+<p>注意：扩容1.5倍使用的是如下代码。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> oldCapacity = elementData.length;</span><br><span class="line"><span class="keyword">int</span> newCapacity = oldCapacity + (oldCapacity &gt;&gt; <span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="Vector注意事项和源码解读"><a href="#Vector注意事项和源码解读" class="headerlink" title="Vector注意事项和源码解读"></a>Vector注意事项和源码解读</h3><p>底层也是一个<strong>数组</strong>，但是Vector是<strong>线程安全</strong>的，该类的操作方法都带有synchronized关键字，考虑线程同步安全时，可以考虑使用。</p>
+<p><strong>Vector扩容机制底层源码：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. new Vector() 底层</span></span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">            public Vector() &#123;</span></span><br><span class="line"><span class="comment">                this(10);</span></span><br><span class="line"><span class="comment">            &#125;</span></span><br><span class="line"><span class="comment">         补充：如果是  Vector vector = new Vector(8);</span></span><br><span class="line"><span class="comment">            走的方法:</span></span><br><span class="line"><span class="comment">            public Vector(int initialCapacity) &#123;</span></span><br><span class="line"><span class="comment">                this(initialCapacity, 0);</span></span><br><span class="line"><span class="comment">            &#125;</span></span><br><span class="line"><span class="comment">         2. vector.add(i)</span></span><br><span class="line"><span class="comment">         2.1  //下面这个方法就添加数据到vector集合</span></span><br><span class="line"><span class="comment">            public synchronized boolean add(E e) &#123;</span></span><br><span class="line"><span class="comment">                modCount++;</span></span><br><span class="line"><span class="comment">                ensureCapacityHelper(elementCount + 1);</span></span><br><span class="line"><span class="comment">                elementData[elementCount++] = e;</span></span><br><span class="line"><span class="comment">                return true;</span></span><br><span class="line"><span class="comment">            &#125;</span></span><br><span class="line"><span class="comment">          2.2  //确定是否需要扩容条件 ： minCapacity - elementData.length&gt;0</span></span><br><span class="line"><span class="comment">            private void ensureCapacityHelper(int minCapacity) &#123;</span></span><br><span class="line"><span class="comment">                // overflow-conscious code</span></span><br><span class="line"><span class="comment">                if (minCapacity - elementData.length &gt; 0)</span></span><br><span class="line"><span class="comment">                    grow(minCapacity);</span></span><br><span class="line"><span class="comment">            &#125;</span></span><br><span class="line"><span class="comment">          2.3 //如果 需要的数组大小 不够用，就扩容 , 扩容的算法</span></span><br><span class="line"><span class="comment">              //newCapacity = oldCapacity + ((capacityIncrement &gt; 0) ?capacityIncrement : oldCapacity);</span></span><br><span class="line"><span class="comment">              </span></span><br><span class="line"><span class="comment">              //就是扩容两倍.</span></span><br><span class="line"><span class="comment">            private void grow(int minCapacity) &#123;</span></span><br><span class="line"><span class="comment">                // overflow-conscious code</span></span><br><span class="line"><span class="comment">                int oldCapacity = elementData.length;</span></span><br><span class="line"><span class="comment">                int newCapacity = oldCapacity + ((capacityIncrement &gt; 0) ?</span></span><br><span class="line"><span class="comment">                                                 capacityIncrement : oldCapacity);</span></span><br><span class="line"><span class="comment">                if (newCapacity - minCapacity &lt; 0)</span></span><br><span class="line"><span class="comment">                    newCapacity = minCapacity;</span></span><br><span class="line"><span class="comment">                if (newCapacity - MAX_ARRAY_SIZE &gt; 0)</span></span><br><span class="line"><span class="comment">                    newCapacity = hugeCapacity(minCapacity);</span></span><br><span class="line"><span class="comment">                elementData = Arrays.copyOf(elementData, newCapacity);</span></span><br><span class="line"><span class="comment">            &#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：扩容的算法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">newCapacity = oldCapacity + ((capacityIncrement &gt; <span class="number">0</span>) ?capacityIncrement : oldCapacity);</span><br></pre></td></tr></table></figure>
+
+<p>在扩容的时候，capacityIncrement是0，<code>newCapacity=oldCapacity+oldCapacity</code>,就是两倍。</p>
+<h4 id="比较ArrayList-amp-Vector"><a href="#比较ArrayList-amp-Vector" class="headerlink" title="比较ArrayList&amp;Vector:"></a>比较ArrayList&amp;Vector:</h4><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211112102038833.png" alt="image-20211112102038833"></p>
+<h3 id="LinkedList源码解读"><a href="#LinkedList源码解读" class="headerlink" title="LinkedList源码解读"></a>LinkedList源码解读</h3><p>LinkedList底层是<strong>双向链表</strong>，实现了双端队列的特点，可以添加任意元素，包括null，<strong>线程不安全</strong>。</p>
+<ul>
+<li><p>LinkedList维护了两个属性first和last分别指向头节点和尾节点。</p>
+</li>
+<li><p>每个节点里面维护了prev,next,item属性，prev指向前一个，next指向后一个，item存储数据，最终实现双向链表。</p>
+</li>
+<li><p>添加删除效率较高。</p>
+</li>
+</ul>
+<p><strong>LinkedList源码解读</strong>：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 1. LinkedList linkedList = new LinkedList();</span></span><br><span class="line"><span class="comment">             public LinkedList() &#123;&#125;</span></span><br><span class="line"><span class="comment">          2. 这时 linkeList 的属性 first = null  last = null</span></span><br><span class="line"><span class="comment">          3. 执行 添加</span></span><br><span class="line"><span class="comment">              public boolean add(E e) &#123;</span></span><br><span class="line"><span class="comment">                   linkLast(e);</span></span><br><span class="line"><span class="comment">                   return true;</span></span><br><span class="line"><span class="comment">               &#125;</span></span><br><span class="line"><span class="comment">           4.将新的结点，加入到双向链表的最后</span></span><br><span class="line"><span class="comment">            void linkLast(E e) &#123;</span></span><br><span class="line"><span class="comment">               final Node&lt;E&gt; l = last;</span></span><br><span class="line"><span class="comment">               final Node&lt;E&gt; newNode = new Node&lt;&gt;(l, e, null);</span></span><br><span class="line"><span class="comment">               last = newNode;</span></span><br><span class="line"><span class="comment">               if (l == null)</span></span><br><span class="line"><span class="comment">                   first = newNode;</span></span><br><span class="line"><span class="comment">               else</span></span><br><span class="line"><span class="comment">                   l.next = newNode;</span></span><br><span class="line"><span class="comment">               size++;</span></span><br><span class="line"><span class="comment">               modCount++;</span></span><br><span class="line"><span class="comment">           &#125;</span></span><br><span class="line"><span class="comment">           </span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*linkedList.remove(); // 这里默认删除的是第一个结点</span></span><br><span class="line"><span class="comment">          1. 执行 removeFirst</span></span><br><span class="line"><span class="comment">            public E remove() &#123;</span></span><br><span class="line"><span class="comment">                return removeFirst();</span></span><br><span class="line"><span class="comment">            &#125;</span></span><br><span class="line"><span class="comment">         2. 执行</span></span><br><span class="line"><span class="comment">            public E removeFirst() &#123;</span></span><br><span class="line"><span class="comment">                final Node&lt;E&gt; f = first;</span></span><br><span class="line"><span class="comment">                if (f == null)</span></span><br><span class="line"><span class="comment">                    throw new NoSuchElementException();</span></span><br><span class="line"><span class="comment">                return unlinkFirst(f);</span></span><br><span class="line"><span class="comment">            &#125;</span></span><br><span class="line"><span class="comment">          3. 执行 unlinkFirst, 将 f 指向的双向链表的第一个结点拿掉</span></span><br><span class="line"><span class="comment">            private E unlinkFirst(Node&lt;E&gt; f) &#123;</span></span><br><span class="line"><span class="comment">                // assert f == first &amp;&amp; f != null;</span></span><br><span class="line"><span class="comment">                final E element = f.item;</span></span><br><span class="line"><span class="comment">                final Node&lt;E&gt; next = f.next;</span></span><br><span class="line"><span class="comment">                f.item = null;</span></span><br><span class="line"><span class="comment">                f.next = null; // help GC</span></span><br><span class="line"><span class="comment">                first = next;</span></span><br><span class="line"><span class="comment">                if (next == null)</span></span><br><span class="line"><span class="comment">                    last = null;</span></span><br><span class="line"><span class="comment">                else</span></span><br><span class="line"><span class="comment">                    next.prev = null;</span></span><br><span class="line"><span class="comment">                size--;</span></span><br><span class="line"><span class="comment">                modCount++;</span></span><br><span class="line"><span class="comment">                return element;</span></span><br><span class="line"><span class="comment">            &#125;</span></span><br><span class="line"><span class="comment">         */</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="ArrayList和LinkedList比较："><a href="#ArrayList和LinkedList比较：" class="headerlink" title="ArrayList和LinkedList比较："></a>ArrayList和LinkedList比较：</h4><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211112104024223.png" alt="image-20211112104024223"></p>
+<h2 id="Set接口"><a href="#Set接口" class="headerlink" title="Set接口"></a>Set接口</h2><p>一个无序（存入和取出顺序有可能不一致）的容器，不可以存储重复元素，只允许存入一个null元素，必须保证元素唯一性。Set 接口常用实现类是 HashSet、LinkedHashSet 以及 TreeSet。</p>
+<h3 id="HashSet-HashMap"><a href="#HashSet-HashMap" class="headerlink" title="HashSet(HashMap)"></a>HashSet(HashMap)</h3><h3 id="LinkedHashSet"><a href="#LinkedHashSet" class="headerlink" title="LinkedHashSet"></a>LinkedHashSet</h3><h3 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h3><h2 id="Map接口"><a href="#Map接口" class="headerlink" title="Map接口"></a>Map接口</h2><p>Map是一个键值对集合，存储键、值和之间的映射。 Key无序，唯一；value 不要求有序，允许重复。Map没有继承于Collection接口，从Map集合中检索元素时，只要给出键对象，就会返回对应的值对象。</p>
+<p>Map 的常用实现类：HashMap、TreeMap、HashTable、LinkedHashMap、ConcurrentHashMap。</p>
+<h3 id="HashMap底层机制和源码解读"><a href="#HashMap底层机制和源码解读" class="headerlink" title="HashMap底层机制和源码解读"></a>HashMap底层机制和源码解读</h3><p>再看一遍</p>
+<p>P34<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1YA411T76k?p=34&amp;spm_id_from=pageDriver">https://www.bilibili.com/video/BV1YA411T76k?p=34&amp;spm_id_from=pageDriver</a></p>
+<p>P40</p>
+<p>P46</p>
+<h3 id="HashTable"><a href="#HashTable" class="headerlink" title="HashTable"></a>HashTable</h3><h3 id="TreeMap"><a href="#TreeMap" class="headerlink" title="TreeMap"></a>TreeMap</h3><h3 id="ConcurrentHashMap"><a href="#ConcurrentHashMap" class="headerlink" title="ConcurrentHashMap"></a>ConcurrentHashMap</h3><h3 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h3><h2 id="Collections工具类"><a href="#Collections工具类" class="headerlink" title="Collections工具类"></a>Collections工具类</h2><p>done</p>
+<h2 id="选择集合类"><a href="#选择集合类" class="headerlink" title="选择集合类"></a>选择集合类</h2><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211103115649491.png" alt="image-20211103115649491"></p>
+<h2 id="习题"><a href="#习题" class="headerlink" title="习题"></a>习题</h2><ol>
+<li></li>
+</ol>
+<p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211103145054400.png" alt="image-20211103145054400"></p>
+<ol start="2">
+<li></li>
+</ol>
+<p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211103145705137.png" alt="image-20211103145705137"></p>
+<p>四个对象：分析如下。<strong>注意题目中重写了equals()和hashcode()方法</strong></p>
+<p>首先加入p1和p2没问题，之后修改了p1的name，在remove (p1)的时候，是用p1(1001-“CC”)计算哈希值找索引的，但是找不到，删除操作失败了…</p>
+<p>新建p3不是同一对象，正常加入了</p>
+<p>最后加入(1001-“AA”)的时候，因为p1的位置已经是(1001-“CC”)的对象了，所以没有重复，在p1索引处形成链表，加入表尾。</p>
+<ol start="3">
+<li></li>
+</ol>
+<p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211103150424257.png" alt="image-20211103150424257"></p>
+<p>此处习题建议阅读参考中的Java集合面试题。</p>
+<h2 id="总结框图："><a href="#总结框图：" class="headerlink" title="总结框图："></a>总结框图：</h2><p>来源网络，侵删，可以在脑中形成大概的知识体系，知识点不全面，没必要记忆。</p>
+<p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/2026442-20211111175629124-83582127.png" alt="集合框图"></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>1.<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1YA411T76k?spm_id_from=333.999.0.0">韩顺平Java集合专题</a></p>
+<p>2.<a target="_blank" rel="noopener" href="https://blog.csdn.net/ThinkWon/article/details/104588551">Java集合容器面试题（2020最新版）</a></p>
+<p>3.《Java核心技术 卷一：基础知识》</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9B%86%E5%90%88/" rel="tag">集合</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2021/11/12/LeetCode40.%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            LeetCode40.组合总和||
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2021/11/12/java%E9%9B%86%E5%90%88%E5%92%8C%E6%B3%9B%E5%9E%8B(%E4%BA%8C)---%E6%B3%9B%E5%9E%8B%E7%AF%87/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">java集合和泛型(二)---泛型篇</div>
+      </a>
+    
+  </nav>
+
+  
+   
+    
+    <script src="https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: "twikoo-1g1qdkfbe66b69e9"
+        })
+    </script>
+ 
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2021
+        <i class="ri-heart-fill heart_icon"></i> Doke
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/iron_man_128.png" alt="Code for Fun"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>
