@@ -90,7 +90,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">3.7k</span>
+            <span class="post-count">3.9k</span>
         </span>
     </span>
 
@@ -116,10 +116,12 @@
        
   <p>参考文章：</p>
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/chanshuyi/p/the_java_class_load_mechamism.html">类加载机制</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zs18753479279/article/details/114497506?spm=1001.2101.3001.6650.1&utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~default-1.no_search_link&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~default-1.no_search_link">面试问题</a></p>
+<p>主要有一下四种类加载器：<br>（1）启动类加载器（Bootstrap Class Loader）用来加载java核心类库，无法被java程序直接引用。<br>（2）扩展类加载器（Extensions Class Loader）：它用来加载Java的扩展库。Java虚拟机的实现会提供一个扩展库目录。<br>该类加载器在此目录里面查找并加载 Java类。<br>（3）系统类加载器（System Class Loader）也叫应用类加载器：它根据Java应用的类路径（CLASSPATH）来加载Java类。一般来说，Java应用的类都是由它来完成加载的。可以通过ClassLoader.getSystemClassLoader0来获取它。<br>（4）用户自定义类加载器，通过继承 java.lang.ClassLoader类的方式实现。</p>
 <p>当我们的Java代码编译（javac ）完成后，会生成对应的 class 文件。接着我们运行<code>java Demo</code>命令的时候，我们其实是启动了JVM 虚拟机执行 class 字节码文件的内容。</p>
 <p>而 JVM 虚拟机执行 class 字节码的过程可以分为七个阶段：==<strong>加载、验证、准备、解析、初始化、使用、卸载</strong>==</p>
 <p><strong>类加载过程：</strong></p>
-<p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/bVcHO1v" alt="image.png"></p>
+<p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211119204648565.png" alt="类加载过程"></p>
 <h2 id="概览（方法论）："><a href="#概览（方法论）：" class="headerlink" title="概览（方法论）："></a>概览（方法论）：</h2><p>一个类的执行顺序：</p>
 <ol>
 <li><p>==确定类变量的初始值。==在类加载的准备阶段，JVM会为类变量初始化零值，所以类变量有初始零值。但是如果是被final修饰的类变量，会直接初始化成用户想要的值。</p>
