@@ -382,6 +382,7 @@
 <h3 id="ConcurrentHashMap（补充且重要）"><a href="#ConcurrentHashMap（补充且重要）" class="headerlink" title="ConcurrentHashMap（补充且重要）"></a>ConcurrentHashMap（补充且重要）</h3><p>概述：　</p>
 <p>ConcurrentHashMap是J.U.C(java.util.concurrent包)的重要成员，它是HashMap的一个线程安全的、支持高效并发的版本。在默认理想状态下，ConcurrentHashMap可以支持16个线程执行并发写操作及任意数量线程的读操作。</p>
 <p>无论是 1.7 还是 1.8   JDK 没有对HashMap做任何的同步操作，所以并发会出问题，甚至 1.7 中出现死循环导致系统不可用（1.8 已经修复死循环问题）。</p>
+<p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211120140715078.png" alt="1.7和1.8ConcurrentHashMap比较概述"></p>
 <p><strong>ConcurrentHashMap</strong></p>
 <p>1.7：</p>
 <p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211120134500562.png" alt="ConcurrentHashMap1.7"></p>

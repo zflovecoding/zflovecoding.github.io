@@ -375,14 +375,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/Linux/</loc>
+    <loc>http://example.com/tags/C/</loc>
     <lastmod>2021-11-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/C/</loc>
+    <loc>http://example.com/tags/Linux/</loc>
     <lastmod>2021-11-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -396,14 +396,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/jvm/</loc>
+    <loc>http://example.com/tags/IDEA/</loc>
     <lastmod>2021-11-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/IDEA/</loc>
+    <loc>http://example.com/tags/jvm/</loc>
     <lastmod>2021-11-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -418,6 +418,13 @@
   
   <url>
     <loc>http://example.com/tags/%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2021-11-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/maven/</loc>
     <lastmod>2021-11-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -445,7 +452,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/maven/</loc>
+    <loc>http://example.com/tags/javaweb/</loc>
     <lastmod>2021-11-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -466,21 +473,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/javaweb/</loc>
-    <lastmod>2021-11-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://example.com/tags/SpringBoot/</loc>
-    <lastmod>2021-11-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/SpringMVC/</loc>
     <lastmod>2021-11-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -495,6 +488,13 @@
   
   <url>
     <loc>http://example.com/tags/Spring/</loc>
+    <lastmod>2021-11-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/SpringMVC/</loc>
     <lastmod>2021-11-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -536,14 +536,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</loc>
+    <loc>http://example.com/tags/Github/</loc>
     <lastmod>2021-11-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/Github/</loc>
+    <loc>http://example.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</loc>
     <lastmod>2021-11-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -573,14 +573,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/categories/%E5%B0%8F%E9%97%AE%E9%A2%98/</loc>
+    <loc>http://example.com/categories/C/</loc>
     <lastmod>2021-11-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://example.com/categories/C/</loc>
+    <loc>http://example.com/categories/%E5%B0%8F%E9%97%AE%E9%A2%98/</loc>
     <lastmod>2021-11-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -615,14 +615,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/categories/SSM%E6%A1%86%E6%9E%B6/</loc>
+    <loc>http://example.com/categories/javaweb/</loc>
     <lastmod>2021-11-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://example.com/categories/javaweb/</loc>
+    <loc>http://example.com/categories/SSM%E6%A1%86%E6%9E%B6/</loc>
     <lastmod>2021-11-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
