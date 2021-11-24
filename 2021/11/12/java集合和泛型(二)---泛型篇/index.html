@@ -90,7 +90,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">88</span>
+            <span class="post-count">250</span>
         </span>
     </span>
 
@@ -114,9 +114,14 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h1><h2 id="框架："><a href="#框架：" class="headerlink" title="框架："></a>框架：</h2><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211107093916508.png" alt="image-20211107093916508"></p>
+  <h1 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h1><h2 id="写在前面："><a href="#写在前面：" class="headerlink" title="写在前面："></a>写在前面：</h2><p>在学习集合的时候我们注意到这样一件事，使用IDEA等IDE<code>new</code>一个集合的时候，比如说<code>ArrayList</code>,会出现:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;Object&gt; objects = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br></pre></td></tr></table></figure>
+
+<p>在ArrayList之后出现一个<code>&lt;&gt;</code>,这是在我们之前的学习中没见过的，通过查阅，我们知道这是Java泛型的<strong>菱形语法</strong>，是用于指定泛型中存储对象的类型，防止没必要的强制转换。说了这么多，那么到底什么泛型呢？是因为什么引入泛型的呢？引入泛型又解决了什么问题呢？</p>
+<p>下面来一一介绍。</p>
+<h2 id="框架："><a href="#框架：" class="headerlink" title="框架："></a>框架：</h2><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211121102146463.png" alt="泛型框架"></p>
 <h2 id="为什么需要泛型"><a href="#为什么需要泛型" class="headerlink" title="为什么需要泛型"></a>为什么需要泛型</h2><h2 id="泛型语法"><a href="#泛型语法" class="headerlink" title="泛型语法"></a>泛型语法</h2><h3 id="泛型的声明"><a href="#泛型的声明" class="headerlink" title="泛型的声明"></a>泛型的声明</h3><h3 id="泛型实例化"><a href="#泛型实例化" class="headerlink" title="泛型实例化"></a>泛型实例化</h3><h3 id="泛型使用举例"><a href="#泛型使用举例" class="headerlink" title="泛型使用举例"></a>泛型使用举例</h3><h3 id="注意事项和细节"><a href="#注意事项和细节" class="headerlink" title="注意事项和细节"></a>注意事项和细节</h3><h2 id="自定义泛型"><a href="#自定义泛型" class="headerlink" title="自定义泛型"></a>自定义泛型</h2><h3 id="自定义泛型类"><a href="#自定义泛型类" class="headerlink" title="自定义泛型类"></a>自定义泛型类</h3><h3 id="自定义泛型接口"><a href="#自定义泛型接口" class="headerlink" title="自定义泛型接口"></a>自定义泛型接口</h3><h3 id="自定义泛型方法"><a href="#自定义泛型方法" class="headerlink" title="自定义泛型方法"></a>自定义泛型方法</h3><p><strong>区分泛型方法和方法中使用泛型</strong></p>
-<h2 id="泛型的继承和通配符"><a href="#泛型的继承和通配符" class="headerlink" title="泛型的继承和通配符"></a>泛型的继承和通配符</h2><h2 id="习题"><a href="#习题" class="headerlink" title="习题"></a>习题</h2><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211107115512757.png" alt="image-20211107115512757"></p>
+<h2 id="泛型的继承和通配符"><a href="#泛型的继承和通配符" class="headerlink" title="泛型的继承和通配符"></a>泛型的继承和通配符</h2><h2 id="习题"><a href="#习题" class="headerlink" title="习题"></a>习题</h2><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211121102232894.png" alt="泛型习题1"></p>
  
       <!-- reward -->
       
