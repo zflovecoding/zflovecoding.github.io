@@ -1,29 +1,181 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>个人博客之旅</title>
-    <url>/2021/11/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%B9%8B%E6%97%85/</url>
-    <content><![CDATA[<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;twikoo_visitors&quot;</span>&gt;</span>0<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+    <title>java基础知识点-牛客专项题知识整理</title>
+    <url>/2022/01/06/20220106-java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%82%B9-%E7%89%9B%E5%AE%A2%E4%B8%93%E9%A1%B9%E9%A2%98%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/</url>
+    <content><![CDATA[<h3 id="1"><a href="#1" class="headerlink" title="1. "></a>1. <img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20220106090416714.png" alt="image-20220106090416714"></h3><p><strong>解答：</strong>类中实例变量可以不用初始化，使用相应类型的默认值即可；方法中的定义的局部变量必须初始化，否则编译不通过。</p>
+<p><strong>知识：</strong></p>
+<p>Java语言支持的变量类型有：</p>
+<ul>
+<li>类变量：独立于方法之外的变量，用 static 修饰。</li>
+<li>实例变量：独立于方法之外的变量，不过没有 static 修饰。</li>
+<li>局部变量：类的方法中的变量。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Variable</span></span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> allClicks=<span class="number">0</span>;    <span class="comment">// 类变量</span></span><br><span class="line"> </span><br><span class="line">    String str=<span class="string">&quot;hello world&quot;</span>;  <span class="comment">// 实例变量</span></span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span></span>&#123;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">int</span> i =<span class="number">0</span>;  <span class="comment">// 局部变量</span></span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>使用工具如下:</p>
-<p>Git，Nodejs,(cnpm…)</p>
-<p>Hexo,Github,</p>
-<p>Hexo-theme(next,yilia,ayer…..)</p>
-<p>Typora,PicGo,Gitee(Github+jsDelivr)</p>
-<p>Valine,LeanCloud,icon8</p>
-<p>给valine添加邮件服务</p>
-<p>twikoo！！！</p>
-<p>各种坑</p>
-<p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211110150106575.png" alt="image-20211110150106575"></p>
-<p><a href="https://blog.zqxin.top/20210214122428/">https://blog.zqxin.top/20210214122428/</a></p>
-<p>yilia:</p>
-<p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211108183731863.png" alt="image-20211108183731863"></p>
+<p><a href="https://www.runoob.com/java/java-variable-types.html">https://www.runoob.com/java/java-variable-types.html</a></p>
+<h3 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h3><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20220106091151193.png" alt="image-20220106091151193"></p>
+<p><strong>知识：</strong>标识符就是用于Java程序中变量，类，方法等命名的符号，Java标识符不能是Java关键字，区分大小写</p>
+<p>Java标识符命名规范是：<br>1）只能包含字母a-zA-Z，数字<code>0</code>-<code>9</code>，下划线_和美元符号$；<br>2）首字母不能为数字；<br>3）关键字和保留字不能作为标识符。<br>null是关键字，NULL不是关键字，java区分大小写。这题答案D是对的，但C是错的，for是关键字。</p>
+<p>PS:关键字都是小写的。</p>
+<p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/5823978_1525665696834_CB1A9F78536141970CA05011F6AC0D2E" alt="img"></p>
+<h3 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h3><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20220106091534540.png" alt="image-20220106091534540"></p>
 ]]></content>
       <categories>
-        <category>网站</category>
+        <category>java</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows下实用快捷键</title>
+    <url>/2022/01/03/202213-Windows%E4%B8%8B%E5%AE%9E%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
+    <content><![CDATA[<p><strong>Win+E 打开文件管理器/我的电脑</strong></p>
+<p><strong>Alt + F4 关闭窗口</strong></p>
+<p><strong>Win+X：系统设置菜单</strong></p>
+<p><strong>Win+Q/S 调用Cortana搜索应用、文档、网页</strong></p>
+<p><strong>Win+T 任务栏上固定的应用之间相互切换。</strong></p>
+<p><strong>Win键+1/2/…N：依据顺序打开<a href="https://www.zhihu.com/search?q=%E4%BB%BB%E5%8A%A1%E6%A0%8F&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:209854128%7D">任务栏</a>中固定的应用。</strong></p>
+<p><strong>Win+Tab 显示你打开的所有窗口，你要哪个点哪个。</strong></p>
+<p>Ctrl + Shift + n 创建新文件夹</p>
+<p>F2 文件夹重命名</p>
+<p><strong>Ctrl + Shift +Esc 打开<a href="https://www.zhihu.com/search?q=%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:209854128%7D">任务管理器</a>。（电脑不听话了）</strong></p>
+<p><strong>Win键+Ctrl+D：创建一个新的虚拟桌面</strong></p>
+<p><strong>Win键+Ctrl+F4：关闭虚拟桌面</strong></p>
+<p><strong>Win键+Ctrl+左/右：切换虚拟桌面</strong></p>
+<p>虚拟桌面真的牛比，生产力++</p>
+<p>工作桌面、参考桌面、通讯桌面</p>
+<p><strong>Ctrl+shift+T 恢复误关网页</strong></p>
+<p><strong>Ctrl+/- 网页放大缩小</strong></p>
+]]></content>
+      <tags>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MIT 6.null Lecture Notes</title>
+    <url>/2021/12/18/20211218-MIT-6.null-Lecture-Notes/</url>
+    <content><![CDATA[<blockquote>
+<p>课程官网：<a href="https://missing.csail.mit.edu/">https://missing.csail.mit.edu/</a></p>
+<p>中文版：<a href="https://missing-semester-cn.github.io/">https://missing-semester-cn.github.io/</a></p>
+<p>视频地址：<a href="https://www.youtube.com/playlist?list=PLyzOVJj3bHQuloKGG59rS43e29ro7I57J">https://www.youtube.com/playlist?list=PLyzOVJj3bHQuloKGG59rS43e29ro7I57J</a></p>
+<p>B站视频：<a href="https://www.bilibili.com/video/BV14E411J7n2">https://www.bilibili.com/video/BV14E411J7n2</a></p>
+</blockquote>
+<p>如题所说，这是计算机教育中缺失的一门课，主要补充一些伴随我们学生时期和工作时期的生产力工具的使用。</p>
+<blockquote>
+<p>大学里的计算机课程通常专注于讲授从操作系统到机器学习这些学院派的课程或主题，而对于如何精通工具这一主题则往往会留给学生自行探索。在这个系列课程中，我们讲授命令行、强大的文本编辑器的使用、使用版本控制系统提供的多种特性等等。学生在他们受教育阶段就会和这些工具朝夕相处（在他们的职业生涯中更是这样）。 因此，花时间打磨使用这些工具的能力并能够最终熟练地、流畅地使用它们是非常有必要的。</p>
+<p>精通这些工具不仅可以帮助您更快的使用工具完成任务，并且可以帮助您解决在之前看来似乎无比复杂的问题。</p>
+</blockquote>
+<h1 id="Lecture-1-Shell"><a href="#Lecture-1-Shell" class="headerlink" title="Lecture 1: Shell"></a>Lecture 1: Shell</h1><p>第一个Lecture主要只是简单地介绍了一些shell命名，以及重定向和管道符。</p>
+<h2 id="使用Shell"><a href="#使用Shell" class="headerlink" title="使用Shell"></a>使用Shell</h2><p>首先打开shell：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">missing:~$ </span><br></pre></td></tr></table></figure>
+
+<p>它告诉你，你的主机名是 <code>missing</code> 并且您当前的工作目录（”current working directory”）或者说您当前所在的位置是 <code>~</code> (表示 “home”)。</p>
+<p> <code>$</code> 符号表示您现在的身份不是 root 用户（稍后会介绍）。在这个提示符中，您可以输入 <em>命令</em> ，命令最终会被 shell 解析。</p>
+<p>eg.</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">missing:~$ date</span><br><span class="line">Fri 10 Jan 2020 11:49:31 AM EST</span><br><span class="line">missing:~$ echo hello</span><br><span class="line">hello</span><br></pre></td></tr></table></figure>
+
+<p>上例中，我们让 shell 执行 <code>echo</code> ，同时指定参数 <code>hello</code>。<code>echo</code> 程序将该参数打印出来。 shell 基于空格分割命令并进行解析，然后执行第一个单词代表的程序，并将后续的单词作为程序可以访问的参数。如果您希望传递的参数中包含空格（例如一个名为 My Photos 的文件夹），您要么用使用单引号，双引号将其包裹起来，要么使用转义符号 <code>\</code> 进行处理（<code>My\ Photos</code>）。</p>
+<p><strong>问题：</strong>shell 是如何知道去哪里寻找 <code>date</code> 或 <code>echo</code> 的呢？</p>
+<p>Answer：shell 是一个编程环境，所以它具备变量、条件、循环和函数（下一课进行讲解）。当你在 shell 中执行命令时，您实际上是在执行一段 shell 可以解释执行的简短代码。如果你要求 shell 执行某个指令，但是该指令并不是 shell 所了解的编程关键字，那么它会去咨询 <em>环境变量</em> <code>$PATH</code>，它会列出当 shell 接到某条指令时，进行程序搜索的路径：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">missing:~$ echo $PATH</span><br><span class="line">/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin</span><br><span class="line">missing:~$ which echo</span><br><span class="line">/bin/echo</span><br><span class="line">missing:~$ /bin/echo $PATH</span><br><span class="line">/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin</span><br></pre></td></tr></table></figure>
+
+<p>确定某个程序名代表的是哪个具体的程序，可以使用 <code>which</code> 程序。我们也可以绕过 <code>$PATH</code>，通过直接指定需要执行的程序的路径来执行该程序</p>
+<h2 id="Shell中路径导航"><a href="#Shell中路径导航" class="headerlink" title="Shell中路径导航"></a>Shell中路径导航</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">missing:~$ pwd</span><br><span class="line">/home/missing</span><br><span class="line">missing:~$ cd /home</span><br><span class="line">missing:/home$ pwd</span><br><span class="line">/home</span><br><span class="line">missing:/home$ cd ..</span><br><span class="line">missing:/$ pwd</span><br><span class="line">/</span><br><span class="line">missing:/$ cd ./home</span><br><span class="line">missing:/home$ pwd</span><br><span class="line">/home</span><br><span class="line">missing:/home$ cd missing</span><br><span class="line">missing:~$ pwd</span><br><span class="line">/home/missing</span><br><span class="line">missing:~$ ../../bin/echo hello</span><br><span class="line">hello</span><br></pre></td></tr></table></figure>
+
+<p>查看文件：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">missing:~$ ls</span><br><span class="line">missing:~$ cd ..</span><br><span class="line">missing:/home$ ls</span><br><span class="line">missing</span><br><span class="line">missing:/home$ cd ..</span><br><span class="line">missing:/$ ls</span><br><span class="line">bin</span><br><span class="line">boot</span><br><span class="line">dev</span><br><span class="line">etc</span><br><span class="line">home</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>详细信息：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">missing:~$ ls -l /home</span><br><span class="line">drwxr-xr-x 1 missing  users  4096 Jun 15  2019 missing</span><br></pre></td></tr></table></figure>
+
+<p>这个参数可以打印出更加详细地列出目录下文件或文件夹的信息。</p>
+<p><strong>文件类型：</strong></p>
+<p>第1个字符表明这个文件的类型。</p>
+<ul>
+<li>d表示这是一个文件夹</li>
+<li>如果是-表示这是一个普通文件</li>
+<li>l表示这是一个链接文件，类似于windows下的快捷方式</li>
+<li>b表示这是一个块设备文件，一般置于/dev目录下，没有文件大小，只有一个主设备号和辅设备号。块设备是一次传输一整块数据的设备，比如硬盘</li>
+<li>c表示这是一个字符设备文件，一般置于/dev目录下，字符设备是一次只传输一个字符数据的设备，比如键盘</li>
+<li>p表示这是一个命令管道文件，与shell编程有关</li>
+<li>s表示这是一个socks文件，与shell编程有关</li>
+</ul>
+<p><strong>文件权限管理：</strong></p>
+<p>d后面有3*3个标志，表示不同的身份对该文件的权限。</p>
+<p>r表示可读权限，w表示可写权限，x表示可执行权限，-表示无相应权限。</p>
+<p>第一组表示该文件的所有者的权限，第二组表示文件所有者同组用户的权限，第三组表示其他用户的权限</p>
+<p><strong>PS:</strong></p>
+<p>权限后面的第一个数字表示</p>
+<ol>
+<li>当这是一个文件时，为硬连接数，即有几个文件硬链接到了这个文件 </li>
+<li>当这是一个文件夹时，为链接占用的节点，即该目录中包含的子目录的个数</li>
+</ol>
+<p>对于一个文件夹来说，为了进入这个文件夹，必须拥有”search”权限，也就是拥有对这个文件夹以及其所有父路径文件夹的x权限。为了<code>ls</code>这个文件夹，必须拥有这个文件夹的r权限</p>
+<h2 id="重定向及管道符号"><a href="#重定向及管道符号" class="headerlink" title="重定向及管道符号"></a>重定向及管道符号</h2><p><strong>重定向：</strong></p>
+<p>在 shell 中，程序有两个主要的“流”：它们的输入流和输出流。 当程序尝试读取信息时，它们会从输入流中进行读取，当程序打印信息时，它们会将信息输出到输出流中。 通常，一个程序的输入输出流都是终端。</p>
+<p><code>&lt; file</code>将输入设定为文件，<code>&gt; file</code>将结果输出到文件，原先文件的内容会被覆盖</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">missing:~$ echo hello &gt; hello.txt</span><br><span class="line">missing:~$ cat hello.txt</span><br><span class="line">hello</span><br><span class="line">missing:~$ cat &lt; hello.txt</span><br><span class="line">hello</span><br><span class="line">missing:~$ cat &lt; hello.txt &gt; hello2.txt</span><br><span class="line">missing:~$ cat hello2.txt</span><br><span class="line">hello</span><br></pre></td></tr></table></figure>
+
+<p><code>&gt;&gt;</code>可以来向文件附加数据。<code>|</code>是管道符号，可以将前一个命令的输出作为下一个命令的输入。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">tail n1列出最后一行,列出的是ls -l的输出</span></span><br><span class="line">missing:~$ ls -l / | tail -n1</span><br><span class="line">drwxr-xr-x 1 root  root  4096 Jun 20  2019 var</span><br><span class="line"><span class="meta">#</span><span class="bash">查看向google发送HTTP GET请求的头文件中的content length属性的值</span></span><br><span class="line">missing:~$ curl --head --silent google.com | grep --ignore-case content-length | cut --delimiter=&#x27; &#x27; -f2</span><br><span class="line">219</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="Lecture-2：Shell-Tools-and-Scripting"><a href="#Lecture-2：Shell-Tools-and-Scripting" class="headerlink" title="Lecture 2：Shell Tools and Scripting"></a>Lecture 2：Shell Tools and Scripting</h1><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211219200158866.png" alt="image-20211219200158866"></p>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>国外公开课</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Chaos</title>
+    <url>/2021/12/13/Chaos/</url>
+    <content><![CDATA[<h1 id="Chaos"><a href="#Chaos" class="headerlink" title="Chaos"></a>Chaos</h1><p>混乱就是我这个下午，乃至今天的代名词，希望至少不会是明天的，留给我的时间已经越来越少了</p>
+<p>首先是我本来的时间表：</p>
+<p><a href="https://zflovecoding.github.io/2021/09/26/%E6%83%B3%E8%BF%9B%E5%A4%A7%E5%8E%82/">https://zflovecoding.github.io/2021/09/26/%E6%83%B3%E8%BF%9B%E5%A4%A7%E5%8E%82/</a></p>
+<p>一定是要大改的</p>
+<p>原因如下：</p>
+<ul>
+<li>暑假实习基本无望。。。</li>
+<li>哈尔滨这种地方找不到日常实习</li>
+</ul>
+<p>暑假学校有不可避免的小学期，还要去沈阳生产实训两周，大概要7月底才有时间，这样我的三个月实习时间要耽误两个月课程，是学校政策不允许的，</p>
+<p>再次整理互联网企业招聘时间：</p>
+<p><strong>大规模应届校招就业：</strong></p>
+<p>2021.12.13~2021.2.21：寒假，学习，没实力实习</p>
+<p>招暑假实习：2，3，4月份，也就是一拨人秋招的时候</p>
+<p>2022.3~2022.7：我的大三下学期</p>
+<p>2022.7~2022.8：暑假小学期</p>
+<p>正常结束要去暑假实习，7-9月开始，一般要三个月，很重要，但是貌似我不能。。。。</p>
+<p>那么我可以怎么办，大四上之后参加一段日常实习。。。准备春招</p>
+<p>秋招，也就是8，9月份，大四上开学</p>
+<p>春招</p>
+<p><strong>可能的实习机会：</strong></p>
+<p>是大四上两个月后，12月到次年几月份，不是暑假实习，是日常实习</p>
+<p><strong>问田老师的问题：</strong></p>
+<p>往届具体实习的时间，大四上三个月？</p>
+<p>学长秋招拿offer都是有项目但是没实习是吗？</p>
+<p>春招拿offer的人多吗？</p>
+<p>有没有项目我可以寒假或者以后跟着做的？</p>
+<p>所以现在我的时间变多：但情况更紧迫！</p>
+<p>12.14-12.25</p>
+<p><strong>1月到8月</strong>：Let’s get things done!</p>
+<p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211221213651590.png" alt="image-20211221213651590"></p>
+<p>240天：知识+项目+面经+简历</p>
+<p>​    </p>
+]]></content>
+      <categories>
+        <category>个人规划</category>
+      </categories>
+      <tags>
+        <tag>计划</tag>
       </tags>
   </entry>
   <entry>
@@ -31,20 +183,25 @@
     <url>/2021/11/30/20211130-CS%E4%B9%8B%E8%B7%AF/</url>
     <content><![CDATA[<p><strong>必学的七门课：</strong></p>
 <ul>
-<li><p>CS 61B</p>
+<li><strong>CS 61B</strong></li>
+<li><strong>MIT 6.Null</strong></li>
+<li><strong>CMU 15-213</strong></li>
+<li><strong>MIT 6.S081</strong></li>
+</ul>
+<hr>
+<ul>
+<li><p>MIT 6.031(TypeScript)</p>
 </li>
-<li><p>MIT 6.Null</p>
+<li><p>CMU 15-445</p>
 </li>
-<li><p>CMU 15-213</p>
-</li>
-<li><p>MIT 6.S081</p>
-</li>
-<li><p>MIT 6.001(</p>
-</li>
-<li><p>MIT 6.824</p>
-</li>
-<li><p>CS 144</p>
-</li>
+</ul>
+<hr>
+<ul>
+<li>CS 61C</li>
+<li>MIT 6.001(</li>
+<li>MIT 6.824</li>
+<li>CS 144</li>
+<li></li>
 </ul>
 <p>摘录自：<a href="https://github.com/conanhujinming/tips_for_interview/blob/master/README-zh_CN.md#%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E6%8E%A8%E8%8D%90">hujinming-tips</a></p>
 <p>推荐学习从一门导论课程开始，然后是6.null，然后是Berkeley的CS61系列。之后学习算法课程、操作系统课程、组成原理/体系结构课程与计算机网络课程。再之后，我相信各位已有足够的判断力选择自己感兴趣或者是需要学习的课程了。再次强调，<strong>上课不做题，等于白上课。</strong></p>
@@ -179,7 +336,8 @@
   <entry>
     <title>想进大厂还需要学习的知识和技术</title>
     <url>/2021/11/13/java%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h2 id="java基础"><a href="#java基础" class="headerlink" title="java基础"></a>java基础</h2><p>==项目==</p>
+    <content><![CDATA[<p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211221213505791.png" alt="image-20211221213505791"></p>
+<h2 id="java基础"><a href="#java基础" class="headerlink" title="java基础"></a>java基础</h2><p>==项目==</p>
 <p>1.基础数据类型细节：</p>
 <p>2.运算符、进制、位运算：</p>
 <p>3.流程控制、循环：</p>
@@ -220,7 +378,7 @@
 <p>24.<strong>正则表达式：</strong></p>
 <p>25.实践：满汉楼</p>
 <h2 id="javaweb-amp-设计模式："><a href="#javaweb-amp-设计模式：" class="headerlink" title="javaweb&amp;设计模式："></a>javaweb&amp;设计模式：</h2><p><strong>javaweb</strong></p>
-<p><strong>设计模式</strong></p>
+<p><strong>设计模式</strong>（先不学</p>
 <hr>
 <h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><p><strong>MySQL：</strong>多做些sql语句的练习，底层，索引，分库分表。。。Btree B+tree</p>
 <p>Redis：底层源码,原理。。。</p>
@@ -273,27 +431,6 @@
       <tags>
         <tag>LeetCode</tag>
         <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>java集合和泛型(二)---泛型篇</title>
-    <url>/2021/11/12/java%E9%9B%86%E5%90%88%E5%92%8C%E6%B3%9B%E5%9E%8B(%E4%BA%8C)---%E6%B3%9B%E5%9E%8B%E7%AF%87/</url>
-    <content><![CDATA[<h1 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h1><h2 id="写在前面："><a href="#写在前面：" class="headerlink" title="写在前面："></a>写在前面：</h2><p>在学习集合的时候我们注意到这样一件事，使用IDEA等IDE<code>new</code>一个集合的时候，比如说<code>ArrayList</code>,会出现:</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ArrayList&lt;Object&gt; objects = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br></pre></td></tr></table></figure>
-
-<p>在ArrayList之后出现一个<code>&lt;&gt;</code>,这是在我们之前的学习中没见过的，通过查阅，我们知道这是Java泛型的<strong>菱形语法</strong>，是用于指定泛型中存储对象的类型，防止没必要的强制转换。说了这么多，那么到底什么泛型呢？是因为什么引入泛型的呢？引入泛型又解决了什么问题呢？</p>
-<p>下面来一一介绍。</p>
-<h2 id="框架："><a href="#框架：" class="headerlink" title="框架："></a>框架：</h2><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211121102146463.png" alt="泛型框架"></p>
-<h2 id="为什么需要泛型"><a href="#为什么需要泛型" class="headerlink" title="为什么需要泛型"></a>为什么需要泛型</h2><h2 id="泛型语法"><a href="#泛型语法" class="headerlink" title="泛型语法"></a>泛型语法</h2><h3 id="泛型的声明"><a href="#泛型的声明" class="headerlink" title="泛型的声明"></a>泛型的声明</h3><h3 id="泛型实例化"><a href="#泛型实例化" class="headerlink" title="泛型实例化"></a>泛型实例化</h3><h3 id="泛型使用举例"><a href="#泛型使用举例" class="headerlink" title="泛型使用举例"></a>泛型使用举例</h3><h3 id="注意事项和细节"><a href="#注意事项和细节" class="headerlink" title="注意事项和细节"></a>注意事项和细节</h3><h2 id="自定义泛型"><a href="#自定义泛型" class="headerlink" title="自定义泛型"></a>自定义泛型</h2><h3 id="自定义泛型类"><a href="#自定义泛型类" class="headerlink" title="自定义泛型类"></a>自定义泛型类</h3><h3 id="自定义泛型接口"><a href="#自定义泛型接口" class="headerlink" title="自定义泛型接口"></a>自定义泛型接口</h3><h3 id="自定义泛型方法"><a href="#自定义泛型方法" class="headerlink" title="自定义泛型方法"></a>自定义泛型方法</h3><p><strong>区分泛型方法和方法中使用泛型</strong></p>
-<h2 id="泛型的继承和通配符"><a href="#泛型的继承和通配符" class="headerlink" title="泛型的继承和通配符"></a>泛型的继承和通配符</h2><h2 id="习题"><a href="#习题" class="headerlink" title="习题"></a>习题</h2><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211121102232894.png" alt="泛型习题1"></p>
-]]></content>
-      <categories>
-        <category>java</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
-        <tag>集合</tag>
-        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -674,6 +811,27 @@
       </tags>
   </entry>
   <entry>
+    <title>java集合和泛型(二)---泛型篇</title>
+    <url>/2021/11/12/java%E9%9B%86%E5%90%88%E5%92%8C%E6%B3%9B%E5%9E%8B(%E4%BA%8C)---%E6%B3%9B%E5%9E%8B%E7%AF%87/</url>
+    <content><![CDATA[<h1 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h1><h2 id="写在前面："><a href="#写在前面：" class="headerlink" title="写在前面："></a>写在前面：</h2><p>在学习集合的时候我们注意到这样一件事，使用IDEA等IDE<code>new</code>一个集合的时候，比如说<code>ArrayList</code>,会出现:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ArrayList&lt;Object&gt; objects = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br></pre></td></tr></table></figure>
+
+<p>在ArrayList之后出现一个<code>&lt;&gt;</code>,这是在我们之前的学习中没见过的，通过查阅，我们知道这是Java泛型的<strong>菱形语法</strong>，是用于指定泛型中存储对象的类型，防止没必要的强制转换。说了这么多，那么到底什么泛型呢？是因为什么引入泛型的呢？引入泛型又解决了什么问题呢？</p>
+<p>下面来一一介绍。</p>
+<h2 id="框架："><a href="#框架：" class="headerlink" title="框架："></a>框架：</h2><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211121102146463.png" alt="泛型框架"></p>
+<h2 id="为什么需要泛型"><a href="#为什么需要泛型" class="headerlink" title="为什么需要泛型"></a>为什么需要泛型</h2><h2 id="泛型语法"><a href="#泛型语法" class="headerlink" title="泛型语法"></a>泛型语法</h2><h3 id="泛型的声明"><a href="#泛型的声明" class="headerlink" title="泛型的声明"></a>泛型的声明</h3><h3 id="泛型实例化"><a href="#泛型实例化" class="headerlink" title="泛型实例化"></a>泛型实例化</h3><h3 id="泛型使用举例"><a href="#泛型使用举例" class="headerlink" title="泛型使用举例"></a>泛型使用举例</h3><h3 id="注意事项和细节"><a href="#注意事项和细节" class="headerlink" title="注意事项和细节"></a>注意事项和细节</h3><h2 id="自定义泛型"><a href="#自定义泛型" class="headerlink" title="自定义泛型"></a>自定义泛型</h2><h3 id="自定义泛型类"><a href="#自定义泛型类" class="headerlink" title="自定义泛型类"></a>自定义泛型类</h3><h3 id="自定义泛型接口"><a href="#自定义泛型接口" class="headerlink" title="自定义泛型接口"></a>自定义泛型接口</h3><h3 id="自定义泛型方法"><a href="#自定义泛型方法" class="headerlink" title="自定义泛型方法"></a>自定义泛型方法</h3><p><strong>区分泛型方法和方法中使用泛型</strong></p>
+<h2 id="泛型的继承和通配符"><a href="#泛型的继承和通配符" class="headerlink" title="泛型的继承和通配符"></a>泛型的继承和通配符</h2><h2 id="习题"><a href="#习题" class="headerlink" title="习题"></a>习题</h2><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211121102232894.png" alt="泛型习题1"></p>
+]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>集合</tag>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>java修饰符</title>
     <url>/2021/11/11/java%E4%BF%AE%E9%A5%B0%E7%AC%A6/</url>
     <content><![CDATA[<p>java中有多种修饰符，主要分为<strong>访问修饰符</strong>和<strong>非访问修饰符</strong>，修饰符的主要作用是定义类，方法和变量。</p>
@@ -784,7 +942,7 @@
 <p>如果没有则生成，命令如下：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;email@email.com&quot;</span></span><br></pre></td></tr></table></figure>
 
-<p><strong>注意：其中”<a href="mailto:&#101;&#109;&#97;&#105;&#x6c;&#64;&#101;&#109;&#x61;&#105;&#x6c;&#46;&#99;&#111;&#109;">&#101;&#109;&#97;&#105;&#x6c;&#64;&#101;&#109;&#x61;&#105;&#x6c;&#46;&#99;&#111;&#109;</a>“是GitHub账号。</strong></p>
+<p><strong>注意：其中”<a href="mailto:&#101;&#x6d;&#97;&#105;&#108;&#64;&#x65;&#x6d;&#97;&#x69;&#108;&#x2e;&#99;&#x6f;&#109;">&#101;&#x6d;&#97;&#105;&#108;&#64;&#x65;&#x6d;&#97;&#x69;&#108;&#x2e;&#99;&#x6f;&#109;</a>“是GitHub账号。</strong></p>
 <p>过程中一路enter就可以了，文件会保存在<code>~/.ssh</code>目录下，id_rsa是你的私钥，id_rsa.pub是公钥。</p>
 <h2 id="添加到Github"><a href="#添加到Github" class="headerlink" title="添加到Github"></a>添加到Github</h2><p>拷贝公钥：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
@@ -823,6 +981,32 @@
     <content><![CDATA[]]></content>
       <categories>
         <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>个人博客之旅</title>
+    <url>/2021/11/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%B9%8B%E6%97%85/</url>
+    <content><![CDATA[<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;twikoo_visitors&quot;</span>&gt;</span>0<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>使用工具如下:</p>
+<p>Git，Nodejs,(cnpm…)</p>
+<p>Hexo,Github,</p>
+<p>Hexo-theme(next,yilia,ayer…..)</p>
+<p>Typora,PicGo,Gitee(Github+jsDelivr)</p>
+<p>Valine,LeanCloud,icon8</p>
+<p>给valine添加邮件服务</p>
+<p>twikoo！！！</p>
+<p>各种坑</p>
+<p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211110150106575.png" alt="image-20211110150106575"></p>
+<p><a href="https://blog.zqxin.top/20210214122428/">https://blog.zqxin.top/20210214122428/</a></p>
+<p>yilia:</p>
+<p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211108183731863.png" alt="image-20211108183731863"></p>
+]]></content>
+      <categories>
+        <category>网站</category>
       </categories>
       <tags>
         <tag>hexo</tag>
@@ -896,8 +1080,8 @@
         <category>MIT6.S081</category>
       </categories>
       <tags>
-        <tag>MIT6.S081</tag>
         <tag>国外公开课</tag>
+        <tag>MIT6.S081</tag>
         <tag>操作系统</tag>
       </tags>
   </entry>
