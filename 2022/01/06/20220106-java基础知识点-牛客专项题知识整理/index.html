@@ -90,7 +90,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">298</span>
+            <span class="post-count">2.9k</span>
         </span>
     </span>
 
@@ -99,7 +99,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">1 分钟</span>
+            <span class="post-count">10 分钟</span>
         </span>
     </span>
 </div>
@@ -132,6 +132,66 @@
 <p>PS:关键字都是小写的。</p>
 <p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/5823978_1525665696834_CB1A9F78536141970CA05011F6AC0D2E" alt="img"></p>
 <h3 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h3><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20220106091534540.png" alt="image-20220106091534540"></p>
+<h3 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h3><p><strong>Java一个源程序只能有一个public类存在，且类名与文件名相同。</strong>Java程序是从main方法开始执行的，public为类加载器提供入口，然后找到public类中的main方法开始执行。如果存在多个public类，程序将不知道该从哪里执行。<br><strong>注意</strong>，内部类可以是public的，因为内部类是作为外部类的成员存在的。</p>
+<h3 id="5"><a href="#5" class="headerlink" title="5."></a>5.</h3><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20220106114049355.png" alt="image-20220106114049355"></p>
+<p><strong>知识：</strong></p>
+<p>1如果是本类使用，可以直接就用静态变量名。</p>
+<p>2如果是其他类使用，可以使用类名来调用，也可以创建一个实例对象来调用。</p>
+<p>3如果静态变量所在的类是静态类，那么不管在本类里或者在其他外部类，都可以直接使用静态变量名。</p>
+<h3 id="6"><a href="#6" class="headerlink" title="6."></a>6.</h3><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20220106114431097.png" alt="image-20220106114431097"></p>
+<p>1.String对象不可变、StringBuffer对象可变的含义： 举个例子：String str = “aa”; str = “aa”+”bb”; 此时str的值为”aabb”，但是”aabb”不是在开始的字符串”aa”后面直接连接的”bb”，而是又新生成了字符串”aabb”，字符串”aa”一旦被初始化，那么它的值不可能再改变了。 </p>
+<p>2.StringBuffer strb = StringBuffer(“aa”); </p>
+<p>strb.append(“bb”); 此时的strb的值也为”aabb”，但是”aabb”是直接在开始的字符串”aa”后面连接的“bb”，并没有生成新的字符串。</p>
+<p><strong>PS:</strong></p>
+<p>String，StringBuffer，StringBuilder，都实现了CharSequence接口。</p>
+<p>String是个不可继承类（final修饰），也是个不可变类（内部char数组被final修饰）。</p>
+<p>StringBuffer和StringBuilder内部都是一般的动态数组，所以可变。前者是线程安全的，因为方法基本都被synchronized修饰了。</p>
+<h3 id="7"><a href="#7" class="headerlink" title="7."></a>7.</h3><p>Socket编程</p>
+<p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20220106114844659.png" alt="image-20220106114844659"></p>
+<h3 id="8"><a href="#8" class="headerlink" title="8."></a>8.</h3><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20220106114946139.png" alt="image-20220106114946139"></p>
+<p><strong>解析：</strong></p>
+<p>一般关系数据模型和对象数据模型之间有以下对应关系：表对应类，记录对应对象，表的字段对应类的属性</p>
+<p>D不对是因为两个类不一定会有<strong>依赖关系</strong></p>
+<p>比如老师和学生表</p>
+<p>老师字段：id name</p>
+<p>学生字段：id name teacherId</p>
+<p>两个表的参考关系为老师表的id对应学生表的teacherId</p>
+<p>而反映到类中 只是学生类中拥有一个名为teacherId的成员变量 可以通过此成员变量的值在老师类的对象中找到对应的对象 但是这不代表依赖关系 学生类和老师类可以单独存在并且有意义</p>
+<h3 id="9-String的不变"><a href="#9-String的不变" class="headerlink" title="9.String的不变"></a>9.String的不变</h3><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20220106115909032.png" alt="image-20220106115909032"></p>
+<p><strong>解析：</strong></p>
+<p>记住几点就可以了:</p>
+<p>1.为什么string字符串的值是不可变的？当我们new一个字符串，给它赋值之后，那么当前对象的值就固定了，永远不会改变。比如String str=new String(“test”)，那么str的值就是test，这是因为在String源码当中是用char数组来按顺序存储字符串中的每一个字符的，并且这个char数组是用final修饰的，这意味着一旦我们给字符串赋值之后，这个对象的值就永远不会改变。</p>
+<p>2.可是当我们在一个类当中的某个方法里面，给这个对象str赋值了一个新的字符串，它这时候的值是多少呢？比如这时str=”good”，str的值就是good，(你可以在这个方法里面写输出语句，输出这个引用，就知道怎么回事了)可不是说引用的值不可以改变么？这里改变的不是引用的值，而是引用str指向的常量不一样了而已，而这个引用的生命周期和当前方法的一样的，也就是方法结束，引用被杀死，也结束了，那么它刚才指向good的这个引用，就结束了，所以在这个方法结束之后，再输出引用str的值，自然就是引用str之前指向的值了，也就是test。</p>
+<p>解析二：</p>
+<p>1.java中只有值传递。 </p>
+<p>2.方法exchange接收的参数是引用的副本。即都是地址的复制值。</p>
+<p>3.方法中str副本指向了一个新的字符串，但是并没有改变原本的str指向的字符串。</p>
+<p>4.方法中ch虽然也是一个副本，但方法利用它修改了它所指向的字符数组中的第一个元素。 </p>
+<p>5.方法结束后，所有副本弹出结束，但是我们的成员变量str和ch还存在，它们依然是之前的地址。所以str的内容不变，ch第一个元素被改变。</p>
+<h3 id="10"><a href="#10" class="headerlink" title="10."></a>10.</h3><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20220106123206902.png" alt="image-20220106123206902"></p>
+<p>A：编译不成功， 1.0默认是double类型, 所以float f=1.0f;（必须加上f 强调定义的是float）此处是精度由高(double)向低(float)转型所以会报错  但是若是float f=1;这里是默认类型是Int 类型 精度由低(int)向高转型(float)不丢失精度不会报错。<br>B：this使用,针对在方法内部使局部变量等值于实例变量而使用的一个关键字，此处的n是静态变量而非实例变量 ,所以this的调用会出错（试想一下，static本来是全类中可以使用的，是全局的，你非得this去调用，这不是区分局部变量和实例变量的分水线吗？但是此处是全局的，不需要区分）<br>C：m是实例变量，什么是实例变量：就是需要new 一个对象出来才能使用的，这里直接用类名就调用了，jvm怎么知道m是谁？<br>D：类变量可以通过类直接调用</p>
+<h3 id="11"><a href="#11" class="headerlink" title="11."></a>11.</h3><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20220106124318004.png" alt="image-20220106124318004"></p>
+<p><strong>简单总结一下：</strong></p>
+<p>直接赋值而不是使用new关键字给字符串初始化，在编译时就将String对象放进字符串常量池中；</p>
+<p>使用new关键字初始化字符串时，是在堆栈区存放变量名和内容；</p>
+<p>字符串的拼接操作在程序运行时，才在堆中创建对象。</p>
+<p>一般，可以认为使用”==”比较的是引用，equals比较的是内容。</p>
+<p>对于上面的题，看完下面的几个例子，你就会有所感悟：String str = new String(“good”);是在编译时在堆栈中创建对象和分配内容，而在传参的时候，传递的是地址，把外面的str引用地址复制了一份给方法内的str而不是里面的内容。</p>
+<p>看例子：；</p>
+<p><strong>例子A：</strong><br>String str1 = “java”;<br>String str2 = “java”;<br>System.out.print(str1==str2);<br>大部分人也许认为会输出false，因为==比较的是引用，equals比较的是内容。可以在自己的机子上运行一 下，结果是true！原因很简单，String对象被放进常量池里了，再次出现“java”字符串的时候，JVM很兴奋地把str2的引用也指向了 “java”对象，它认为自己节省了内存开销。<br><strong>例子B：</strong><br>String str1 = new String(“java”);<br>String str2 = new String(“java”);<br>System.out.print(str1==str2);<br>看过上例的都学聪明了，这次肯定会输出true！很不幸，JVM并没有这么做，结果是false。原因很简单，例子A中<strong>那种直接赋值（而没有通过new关键字实例化的字符串变量）声明的方式确实是在 String常量池创建“java”对象，但是一旦看到new关键字，JVM会在堆中为String分配空间。</strong>两者声明方式貌合神离，这也是我把“如何创 建字符串对象”放到后面来讲的原因。大家要沉住气，还有一个例子。<br>例子C：<br>String str1 = “java”;      //直接赋值而不是使用new关键字给字符串初始化，在编译时就将String对象放进字符串常量池中<br>String str2 = “blog”; //直接赋值而不是使用new关键字给字符串初始化，在编译时就将String对象放进字符串常量池中<br>String s = str1+str2;      //字符串的拼接操作在程序运行时，才在堆中创建对象，<br>System.out.print(s==”javablog”);<br>再看这个例子，很多同志不敢妄言是true还是false了吧。爱玩脑筋急转弯的人会说是false吧……恭喜你，你会抢答了！把那个“吧”字去掉你就完 全正确。原因很简单，<strong>JVM确实会对型如String str1 = “java”; 的String对象放在字符串常量池里，但是它是在编译时刻那么做的，而String s = str1+str2; 是在运行时刻才能知道（我们当然一眼就看穿了，可是Java必须在运行时才知道的，人脑和电脑的结构不同），也就是说str1+str2是在堆里创建的， s引用当然不可能指向字符串常量池里的对象。</strong>没崩溃的人继续看例子D。<br>例子D：<br>String s1 = “java”;<br>String s2 = new String(“java”);<br>System.out.print(s1.intern()==s2.intern());<br>intern()是什么东东？反正结果是true。如果没用过这个方法，而且训练有素的程序员会去看JDK文档了。简单点说就是用intern()方法就可以用“==”比较字符串的内容了。在我看到intern()方法到底有什么用之前，我认为它太多余了。其实我写的这一条也很多余，intern()方法 还存在诸多的问题，如效率、实现上的不统一……<br>例子E：<br>String str1 = “java”;<br>String str2 = new String(“java”);<br>System.out.print(str1.equals(str2));<br><strong>无论在常量池还是堆中的对象，用equals()方法比较的就是内容</strong>，就这么简单！</p>
+<p>以上内容引用自:<a target="_blank" rel="noopener" href="http://hi.baidu.com/dairywg/blog/item/495f81b11885fa500823027f.html">http://hi.baidu.com/dairywg/blog/item/495f81b11885fa500823027f.html</a></p>
+<h3 id="12"><a href="#12" class="headerlink" title="12."></a>12.</h3><p>包含抽象方法的类称为抽象类，但并不意味着抽象类中只能有抽象方法，它和普通类一样，同样可以拥有成员变量和普通的成员方法。注意，抽象类和普通类的主要有三点区别：</p>
+<p>1）抽象方法必须为public或者protected（因为如果为private，则不能被子类继承，子类便无法实现该方法），缺省情况下默认为public。</p>
+<p>2）抽象类不能用来创建对象；</p>
+<p>3）如果一个类继承于一个抽象类，则子类必须实现父类的抽象方法。如果子类没有实现父类的抽象方法，则必须将子类也定义为为abstract类。</p>
+<p>在其他方面，抽象类和普通的类并没有区别。</p>
+<h3 id="13"><a href="#13" class="headerlink" title="13."></a>13.</h3><p>-d destination 目的地</p>
+<p>-s source 起源地</p>
+<p>javac -d 指定放置生成的类文件的位置</p>
+<p>javac -s 指定放置生成的源文件的位置</p>
+<h3 id="14"><a href="#14" class="headerlink" title="14."></a>14.</h3><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20220106131333106.png" alt="image-20220106131333106"></p>
+<p><strong>解析：</strong></p>
+<p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/6316247_1471446548929_2F9F7E31EC51C5C37F5962B0F07D6A39" alt="14解析_替换变量名分析"></p>
  
       <!-- reward -->
       
@@ -161,6 +221,15 @@
 
    
   <nav class="article-nav">
+    
+      <a href="/2022/01/27/2022127-java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            java多线程基础
+          
+        </div>
+      </a>
     
     
       <a href="/2022/01/03/202213-Windows%E4%B8%8B%E5%AE%9E%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="article-nav-link">

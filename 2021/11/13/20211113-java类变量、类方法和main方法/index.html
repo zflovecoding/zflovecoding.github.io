@@ -13,7 +13,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>java类变量、类方法和main方法 |  Code for Fun</title>
+      <title>java类变量、类方法和main方法到工厂模式 |  Code for Fun</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/iron_man_128.png" />
@@ -70,7 +70,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  java类变量、类方法和main方法
+  java类变量、类方法和main方法到工厂模式
 </h1>
  
 
@@ -90,7 +90,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">9</span>
+            <span class="post-count">3.1k</span>
         </span>
     </span>
 
@@ -99,7 +99,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">1 分钟</span>
+            <span class="post-count">10 分钟</span>
         </span>
     </span>
 </div>
@@ -114,7 +114,109 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h2 id="类变量"><a href="#类变量" class="headerlink" title="类变量"></a>类变量</h2><h2 id="类方法"><a href="#类方法" class="headerlink" title="类方法"></a>类方法</h2><h2 id="main方法"><a href="#main方法" class="headerlink" title="main方法"></a>main方法</h2> 
+  <h2 id="类变量"><a href="#类变量" class="headerlink" title="类变量"></a>类变量</h2><p>据我们所知，java中的变量有三种类型：</p>
+<ul>
+<li>类变量：独立于方法之外的变量，用 static 修饰。</li>
+<li>实例变量：独立于方法之外的变量，不过没有 static 修饰。</li>
+<li>局部变量：类的方法中的变量。</li>
+</ul>
+<p>类变量也叫<strong>静态变量</strong>（后文均以静态变量指代类变量），静态变量是同一个类的所有对象共享的变量，随着类的加载而创建，并且由JVM完成初始化，具体阶段是类加载的<strong>准备</strong>阶段。</p>
+<h3 id="静态变量保存在哪里"><a href="#静态变量保存在哪里" class="headerlink" title="静态变量保存在哪里"></a>静态变量保存在哪里</h3><p><strong>JDK7以上版本，静态域存储于定义类型的Class对象中，Class对象如同堆中其他对象一样，存在于GC堆中</strong>。</p>
+<p>参考[<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/59174759/answer/163207831">1</a>,<a target="_blank" rel="noopener" href="https://blog.csdn.net/x_iya/article/details/81260154">2</a>]</p>
+<h3 id="如何访问"><a href="#如何访问" class="headerlink" title="如何访问"></a>如何访问</h3><p>类名.静态变量名（推荐使用）</p>
+<p>对象名.静态变量名</p>
+<h3 id="注意事项及细节"><a href="#注意事项及细节" class="headerlink" title="注意事项及细节"></a>注意事项及细节</h3><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20220321140816690.png" alt="image-20220321140816690"></p>
+<h2 id="类方法"><a href="#类方法" class="headerlink" title="类方法"></a>类方法</h2><p><strong>类方法：</strong> 又叫做静态方法</p>
+<p><strong>对象方法：</strong> 又叫实例方法，非静态方法</p>
+<h3 id="类方法-1"><a href="#类方法-1" class="headerlink" title="类方法"></a>类方法</h3><p>用static修饰的方法。由于类方法是属于整个类的，并不属于类的哪儿个对象，所以类方法的方法体中不能有与类的对象有关的内容。即类方法体有如下限制：</p>
+<p>1.类方法中不能引用对象变量；</p>
+<p>2.类方法中不能调用类的对象方法；</p>
+<p>3.在类方法中不能调使用super，this关键字；</p>
+<p>4.类方法不能被覆盖。</p>
+<h3 id="实例方法"><a href="#实例方法" class="headerlink" title="实例方法"></a>实例方法</h3><p>当一个类创建了一个对象后，这个对象就可以调用该类的方法（对象方法）。</p>
+<p>1.实例方法中可以引用对象变量，也可以引用类变量；</p>
+<p>2.实例方法中可以调用类方法；</p>
+<p>3.对象方法中可以使用super，this关键字。</p>
+<h3 id="类方法和实例方法有什么区别"><a href="#类方法和实例方法有什么区别" class="headerlink" title="类方法和实例方法有什么区别"></a>类方法和实例方法有什么区别</h3><p>主要的区别是<strong>加载时间</strong>和<strong>生命周期</strong>不同。</p>
+<p>在类的初始化过程中，首先加载的是类方法，其次才是实例方法。</p>
+<p>类方法在字节码加载到内存的时候就分配了入口地址，而实例方法是在该类创建对象以后才分配；类方法随类的创建而创建，也随类的消亡而消亡，实例方法随对象被回收而消亡。</p>
+<p>类中的类方法不可以操作实例变量，也不可以调用实例方法，这是因为在类创建对象之前，实例成员变量还没有分配内存，而且实例方法也没有入口地址。</p>
+<h3 id="实例方法的入口地址"><a href="#实例方法的入口地址" class="headerlink" title="实例方法的入口地址*****"></a>实例方法的入口地址*****</h3><p>当我们创建第一个对象时，类中的实例方法就分配了入口地址，当再创建对象时，不再分配入口地址，也就是说，方法的入口地址被所有的对象共享，当所有的对象都不存在时，方法的入口地址才被取消。</p>
+<p>在创建对象时，实例方法的入口地址被保存在<strong>方法区</strong>中。</p>
+<p>方法区是多个线程共享空间如果实例方法也随着实例的增加而增加的话，那么将消耗很大的内存。为了保证多个实例的方法入口地址共享一小段内存，且方法中的数据又仅提供给当前实例使用，Java是通过this关键字做到的。比如：instance1.instanceMethod(); instance2.instanceMethod(); 我们也知道<strong>方法中的局部变量是存储于方法栈</strong>中，而方法栈是线程私有的。所以也就是：<strong>共享方法的入口地址，但方法中的数据及局部变量都是私有的。</strong></p>
+<p>在传递给对象参数的时候，Java 编译器自动先加上了一个this参数，它表示传递的是这个对象引用，虽然他们两个对象共用一个方法，但是他们的方法中所产生的数据是私有的，这是因为参数被传进来变成call stack内的entry，而各个对象都有不同call stack，所以不会混淆。其实调用每个非static方法时，Java 编译器都会自动的先加上当前调用此方法对象的参数，有时候在一个方法调用另一个方法，这时可以不用在前面加上this的，因为要传递的对象参数就是当前执行这个方法的对象。</p>
+<h3 id="什么情况下使用类方法"><a href="#什么情况下使用类方法" class="headerlink" title="什么情况下使用类方法"></a>什么情况下使用类方法</h3><ul>
+<li>方法不需要访问对象状态，因为它需要的所有参数都通过显示参数提供（e.g. Math.pow）</li>
+<li>方法只需要访问类的静态字段</li>
+</ul>
+<h3 id="注意事项及细节-1"><a href="#注意事项及细节-1" class="headerlink" title="注意事项及细节"></a>注意事项及细节</h3><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20220321143450185.png" alt="image-20220321143450185"></p>
+<h2 id="main方法"><a href="#main方法" class="headerlink" title="main方法"></a>main方法</h2><p><code>public static void main(String[] args)&#123;&#125;</code></p>
+<ol>
+<li>main()方法是虚拟机调用的</li>
+<li>JVM需要调用类的main()方法，所以权限是public</li>
+<li>JVM在执行main()方法时不必创建对象，所以是静态方法static</li>
+<li>该方法可以接收String类型的数组参数，该数组保存执行java命令时传递给运行类的参数</li>
+<li>mian()方法可以直接调用所在类的静态方法或静态属性</li>
+<li>但是，不能直接访问该类中的非静态成员，必须创建该类的一个实例对象后，才能通过这个对象访问类中的非静态成员。</li>
+</ol>
+<h2 id="工厂方法模式"><a href="#工厂方法模式" class="headerlink" title="工厂方法模式"></a><strong>工厂方法模式</strong></h2><p>工厂方法即Factory Method，是一种对象创建型模式。</p>
+<blockquote>
+<p>定义一个用于创建对象的接口，让子类决定实例化哪一个类。Factory Method使一个类的实例化延迟到其子类。</p>
+</blockquote>
+<h3 id="工厂方法模式结构"><a href="#工厂方法模式结构" class="headerlink" title="工厂方法模式结构"></a>工厂方法模式结构</h3><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20220321154117056.png" alt="image-20220321154117056"></p>
+<ol>
+<li><p><strong>产品</strong> （Product） 将会对接口进行声明。 对于所有由创建者及其子类构建的对象， 这些接口都是通用的。</p>
+</li>
+<li><p><strong>具体产品</strong> （Concrete Products） 是产品接口的不同实现。</p>
+</li>
+<li><p><strong>创建者</strong> （Creator） 类声明返回产品对象的工厂方法。 该方法的返回对象类型必须与产品接口相匹配。</p>
+<p>你可以将工厂方法声明为抽象方法， 强制要求每个子类以不同方式实现该方法。 或者， 你也可以在基础工厂方法中返回默认产品类型。</p>
+<p>注意， 尽管它的名字是创建者， 但它最主要的职责并<strong>不是</strong>创建产品。 一般来说， 创建者类包含一些与产品相关的核心业务逻辑。 工厂方法将这些逻辑处理从具体产品类中分离出来。 </p>
+</li>
+<li><p><strong>具体创建者</strong> （Concrete Creators） 将会重写基础工厂方法， 使其返回不同类型的产品。</p>
+</li>
+</ol>
+<p>注意， 并不一定每次调用工厂方法都会<strong>创建</strong>新的实例。 工厂方法也可以返回缓存、 对象池或其他来源的已有对象。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20220321154458434.png" alt="image-20220321154458434"></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建者类声明的工厂方法必须返回一个产品类的对象。创建者的子类通常会提供</span></span><br><span class="line"><span class="comment">// 该方法的实现。</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dialog</span> <span class="title">is</span></span></span><br><span class="line"><span class="class">    // 创建者还可提供一些工厂方法的默认实现。</span></span><br><span class="line"><span class="class">    <span class="title">abstract</span> <span class="title">method</span> <span class="title">createButton</span>():<span class="title">Button</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">    // 请注意，创建者的主要职责并非是创建产品。其中通常会包含一些核心业务</span></span><br><span class="line"><span class="class">    // 逻辑，这些逻辑依赖于由工厂方法返回的产品对象。子类可通过重写工厂方</span></span><br><span class="line"><span class="class">    // 法并使其返回不同类型的产品来间接修改业务逻辑。</span></span><br><span class="line"><span class="class">    <span class="title">method</span> <span class="title">render</span>() <span class="title">is</span></span></span><br><span class="line"><span class="class">        // 调用工厂方法创建一个产品对象。</span></span><br><span class="line"><span class="class">        <span class="title">Button</span> <span class="title">okButton</span> </span>= createButton()</span><br><span class="line">        <span class="comment">// 现在使用产品。</span></span><br><span class="line">        okButton.onClick(closeDialog)</span><br><span class="line">        okButton.render()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 具体创建者将重写工厂方法以改变其所返回的产品类型。</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">WindowsDialog</span> <span class="keyword">extends</span> <span class="title">Dialog</span> <span class="title">is</span></span></span><br><span class="line"><span class="class">    <span class="title">method</span> <span class="title">createButton</span>():<span class="title">Button</span> <span class="title">is</span></span></span><br><span class="line"><span class="class">        <span class="title">return</span> <span class="title">new</span> <span class="title">WindowsButton</span>()</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">WebDialog</span> <span class="keyword">extends</span> <span class="title">Dialog</span> <span class="title">is</span></span></span><br><span class="line"><span class="class">    <span class="title">method</span> <span class="title">createButton</span>():<span class="title">Button</span> <span class="title">is</span></span></span><br><span class="line"><span class="class">        <span class="title">return</span> <span class="title">new</span> <span class="title">HTMLButton</span>()</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">// 产品接口中将声明所有具体产品都必须实现的操作。</span></span><br><span class="line"><span class="class"><span class="title">interface</span> <span class="title">Button</span> <span class="title">is</span></span></span><br><span class="line"><span class="class">    <span class="title">method</span> <span class="title">render</span>()</span></span><br><span class="line"><span class="class">    <span class="title">method</span> <span class="title">onClick</span>(<span class="title">f</span>)</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">// 具体产品需提供产品接口的各种实现。</span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">WindowsButton</span> <span class="title">implements</span> <span class="title">Button</span> <span class="title">is</span></span></span><br><span class="line"><span class="class">    <span class="title">method</span> <span class="title">render</span>(<span class="title">a</span>, <span class="title">b</span>) <span class="title">is</span></span></span><br><span class="line"><span class="class">        // 根据 <span class="title">Windows</span> 样式渲染按钮。</span></span><br><span class="line"><span class="class">    <span class="title">method</span> <span class="title">onClick</span>(<span class="title">f</span>) <span class="title">is</span></span></span><br><span class="line"><span class="class">        // 绑定本地操作系统点击事件。</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">HTMLButton</span> <span class="title">implements</span> <span class="title">Button</span> <span class="title">is</span></span></span><br><span class="line"><span class="class">    <span class="title">method</span> <span class="title">render</span>(<span class="title">a</span>, <span class="title">b</span>) <span class="title">is</span></span></span><br><span class="line"><span class="class">        // 返回一个按钮的 <span class="title">HTML</span> 表述。</span></span><br><span class="line"><span class="class">    <span class="title">method</span> <span class="title">onClick</span>(<span class="title">f</span>) <span class="title">is</span></span></span><br><span class="line"><span class="class">        // 绑定网络浏览器的点击事件。</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">Application</span> <span class="title">is</span></span></span><br><span class="line"><span class="class">    <span class="title">field</span> <span class="title">dialog</span>: <span class="title">Dialog</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">    // 程序根据当前配置或环境设定选择创建者的类型。</span></span><br><span class="line"><span class="class">    <span class="title">method</span> <span class="title">initialize</span>() <span class="title">is</span></span></span><br><span class="line"><span class="class">        <span class="title">config</span> </span>= readApplicationConfigFile()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (config.OS == <span class="string">&quot;Windows&quot;</span>) then</span><br><span class="line">            dialog = <span class="keyword">new</span> WindowsDialog()</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (config.OS == <span class="string">&quot;Web&quot;</span>) then</span><br><span class="line">            dialog = <span class="keyword">new</span> WebDialog()</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="string">&quot;错误！未知的操作系统。&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 当前客户端代码会与具体创建者的实例进行交互，但是必须通过其基本接口</span></span><br><span class="line">    <span class="comment">// 进行。只要客户端通过基本接口与创建者进行交互，你就可将任何创建者子</span></span><br><span class="line">    <span class="comment">// 类传递给客户端。</span></span><br><span class="line">    method main() is</span><br><span class="line">        <span class="built_in">this</span>.initialize()</span><br><span class="line">        dialog.render()</span><br></pre></td></tr></table></figure>
+
+<h3 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h3><ul>
+<li><p>当你在编写代码的过程中， 如果<strong>无法预知对象确切类别</strong>及其依赖关系时， 可使用工厂方法。</p>
+</li>
+<li><p>如果你希望用户能<strong>扩展</strong>你软件库或框架的内部组件， 可使用工厂方法。</p>
+</li>
+<li><p>如果你希望<strong>复用</strong>现有对象来节省系统资源， 而不是每次都重新创建对象， 可使用工厂方法。</p>
+</li>
+</ul>
+<h3 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h3><ol>
+<li>让所有产品都遵循同一接口。 该接口必须声明对所有产品都有意义的方法。</li>
+<li>在创建类中添加一个空的工厂方法。 该方法的返回类型必须遵循通用的产品接口。</li>
+<li>在创建者代码中找到对于产品构造函数的所有引用。 将它们依次替换为对于工厂方法的调用， 同时将创建产品的代码移入工厂方法。 你可能需要在工厂方法中添加临时参数来控制返回的产品类型。</li>
+<li>现在，为工厂方法中的每种产品编写一个创建者子类， 然后在子类中重写工厂方法， 并将基本方法中的相关创建代码移动到工厂方法中。</li>
+<li>如果应用中的产品类型太多， 那么为每个产品创建子类并无太大必要， 这时你也可以在子类中复用基类中的控制参数。</li>
+</ol>
+<p>​        例如， 设想你有以下一些层次结构的类。 基类 <code>邮件</code>及其子类 <code>航空邮件</code>和 <code>陆路邮件</code> ；  <code>运输</code>及其子类 <code>飞机</code>, <code>卡车</code>和 <code>火车</code> 。  <code>航空邮件</code>仅使用 <code>飞机</code>对象， 而 <code>陆路邮件</code>则会同时使用 <code>卡车</code>和 <code>火车</code>对象。 你可以编写一个新的子类 （例如 <code>火车邮件</code> ） 来处理这两种情况， 但是还有其他可选的方案。 客户端代码可以给 <code>陆路邮件</code>类传递一个参数， 用于控制其希望获得的产品。</p>
+<ol start="6">
+<li>如果代码经过上述移动后， 基础工厂方法中已经没有任何代码， 你可以将其转变为抽象类。 如果基础工厂方法中还有其他语句， 你可以将其设置为该方法的默认行为。</li>
+</ol>
+<h3 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h3><p>:heavy_check_mark: 可以避免创建者和具体产品之间的紧密耦合。</p>
+<p>:heavy_check_mark:  单一职责原则。 可以将产品创建代码放在程序的单一位置， 从而使得代码更容易维护。</p>
+<p>:heavy_check_mark: 开闭原则。 无需更改现有客户端代码， 你就可以在程序中引入新的产品类型。</p>
+<p>:x:应用工厂方法模式需要引入许多新的子类， 代码可能会因此变得更复杂。 最好的情况是将该模式引入创建者类的现有层次结构中。</p>
+<p>工厂方法是指定义工厂接口和产品接口，但如何创建实际工厂和实际产品被推迟到子类实现，从而使调用方只和抽象工厂与抽象产品打交道。</p>
+<p>实际更常用的是更简单的静态工厂方法，它允许工厂内部对创建产品进行优化。</p>
+<p>调用方尽量持有接口或抽象类，避免持有具体类型的子类，以便工厂方法能随时切换不同的子类返回，却不影响调用方代码。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><p><a target="_blank" rel="noopener" href="https://refactoringguru.cn/design-patterns/factory-method">设计模式-工厂方法模式</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/1252599548343744/1281319170474017">廖雪峰-工厂方法</a></p>
+</li>
+<li><p>《Java核心技术：卷I》</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1fh411y7R8?spm_id_from=333.999.0.0">韩顺平B站视频</a></p>
+</li>
+</ol>
+ 
       <!-- reward -->
       
     </div>
@@ -144,11 +246,11 @@
    
   <nav class="article-nav">
     
-      <a href="/2021/11/13/20211113-java%E4%B8%AD%E7%9A%84final%E5%85%B3%E9%94%AE%E5%AD%97/" class="article-nav-link">
+      <a href="/2021/11/13/20211113-java%E4%BB%A3%E7%A0%81%E5%9D%97/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            java中的final关键字
+            从代码块到单例模式
           
         </div>
       </a>

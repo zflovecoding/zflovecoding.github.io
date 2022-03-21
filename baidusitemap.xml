@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://example.com/2021/11/13/20211113-java%E7%B1%BB%E5%8F%98%E9%87%8F%E3%80%81%E7%B1%BB%E6%96%B9%E6%B3%95%E5%92%8Cmain%E6%96%B9%E6%B3%95/</loc>
+    <lastmod>2022-03-21</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2022/01/28/2022128-javaIO%E6%B5%81/</loc>
+    <lastmod>2022-01-25</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2022/01/27/2022127-java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2022-01-25</lastmod>
+  </url>
+  <url>
     <loc>http://example.com/2022/01/06/20220106-java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%82%B9-%E7%89%9B%E5%AE%A2%E4%B8%93%E9%A1%B9%E9%A2%98%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/</loc>
     <lastmod>2022-01-06</lastmod>
   </url>
@@ -74,10 +86,6 @@
   </url>
   <url>
     <loc>http://example.com/2021/11/11/java%E4%BF%AE%E9%A5%B0%E7%AC%A6/</loc>
-    <lastmod>2021-11-13</lastmod>
-  </url>
-  <url>
-    <loc>http://example.com/2021/11/13/20211113-java%E7%B1%BB%E5%8F%98%E9%87%8F%E3%80%81%E7%B1%BB%E6%96%B9%E6%B3%95%E5%92%8Cmain%E6%96%B9%E6%B3%95/</loc>
     <lastmod>2021-11-13</lastmod>
   </url>
   <url>
