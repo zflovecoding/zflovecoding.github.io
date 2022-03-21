@@ -392,20 +392,6 @@
       </tags>
   </entry>
   <entry>
-    <title>从代码块到单例模式</title>
-    <url>/2021/11/13/20211113-java%E4%BB%A3%E7%A0%81%E5%9D%97/</url>
-    <content><![CDATA[<h2 id="代码块："><a href="#代码块：" class="headerlink" title="代码块："></a>代码块：</h2><h3 id="普通代码块："><a href="#普通代码块：" class="headerlink" title="普通代码块："></a>普通代码块：</h3><h3 id="静态代码块："><a href="#静态代码块：" class="headerlink" title="静态代码块："></a>静态代码块：</h3><h3 id="调用顺序："><a href="#调用顺序：" class="headerlink" title="调用顺序："></a>调用顺序：</h3><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211113130904781.png" alt="image-20211113130904781"></p>
-<h2 id="单例模式："><a href="#单例模式：" class="headerlink" title="单例模式："></a>单例模式：</h2><h3 id="什么是单例模式："><a href="#什么是单例模式：" class="headerlink" title="什么是单例模式："></a>什么是单例模式：</h3><p>​    </p>
-]]></content>
-      <categories>
-        <category>java</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
-        <tag>设计模式</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>java类变量、类方法和main方法到工厂模式</title>
     <url>/2021/11/13/20211113-java%E7%B1%BB%E5%8F%98%E9%87%8F%E3%80%81%E7%B1%BB%E6%96%B9%E6%B3%95%E5%92%8Cmain%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<h2 id="类变量"><a href="#类变量" class="headerlink" title="类变量"></a>类变量</h2><p>据我们所知，java中的变量有三种类型：</p>
@@ -435,7 +421,7 @@
 <p>在类的初始化过程中，首先加载的是类方法，其次才是实例方法。</p>
 <p>类方法在字节码加载到内存的时候就分配了入口地址，而实例方法是在该类创建对象以后才分配；类方法随类的创建而创建，也随类的消亡而消亡，实例方法随对象被回收而消亡。</p>
 <p>类中的类方法不可以操作实例变量，也不可以调用实例方法，这是因为在类创建对象之前，实例成员变量还没有分配内存，而且实例方法也没有入口地址。</p>
-<h3 id="实例方法的入口地址"><a href="#实例方法的入口地址" class="headerlink" title="实例方法的入口地址*****"></a>实例方法的入口地址*****</h3><p>当我们创建第一个对象时，类中的实例方法就分配了入口地址，当再创建对象时，不再分配入口地址，也就是说，方法的入口地址被所有的对象共享，当所有的对象都不存在时，方法的入口地址才被取消。</p>
+<h3 id="实例方法的入口地址"><a href="#实例方法的入口地址" class="headerlink" title="实例方法的入口地址*"></a>实例方法的入口地址*</h3><p>当我们创建第一个对象时，类中的实例方法就分配了入口地址，当再创建对象时，不再分配入口地址，也就是说，方法的入口地址被所有的对象共享，当所有的对象都不存在时，方法的入口地址才被取消。</p>
 <p>在创建对象时，实例方法的入口地址被保存在<strong>方法区</strong>中。</p>
 <p>方法区是多个线程共享空间如果实例方法也随着实例的增加而增加的话，那么将消耗很大的内存。为了保证多个实例的方法入口地址共享一小段内存，且方法中的数据又仅提供给当前实例使用，Java是通过this关键字做到的。比如：instance1.instanceMethod(); instance2.instanceMethod(); 我们也知道<strong>方法中的局部变量是存储于方法栈</strong>中，而方法栈是线程私有的。所以也就是：<strong>共享方法的入口地址，但方法中的数据及局部变量都是私有的。</strong></p>
 <p>在传递给对象参数的时候，Java 编译器自动先加上了一个this参数，它表示传递的是这个对象引用，虽然他们两个对象共用一个方法，但是他们的方法中所产生的数据是私有的，这是因为参数被传进来变成call stack内的entry，而各个对象都有不同call stack，所以不会混淆。其实调用每个非static方法时，Java 编译器都会自动的先加上当前调用此方法对象的参数，有时候在一个方法调用另一个方法，这时可以不用在前面加上this的，因为要传递的对象参数就是当前执行这个方法的对象。</p>
@@ -493,11 +479,13 @@
 <ol start="6">
 <li>如果代码经过上述移动后， 基础工厂方法中已经没有任何代码， 你可以将其转变为抽象类。 如果基础工厂方法中还有其他语句， 你可以将其设置为该方法的默认行为。</li>
 </ol>
-<h3 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h3><p>:heavy_check_mark: 可以避免创建者和具体产品之间的紧密耦合。</p>
-<p>:heavy_check_mark:  单一职责原则。 可以将产品创建代码放在程序的单一位置， 从而使得代码更容易维护。</p>
-<p>:heavy_check_mark: 开闭原则。 无需更改现有客户端代码， 你就可以在程序中引入新的产品类型。</p>
-<p>:x:应用工厂方法模式需要引入许多新的子类， 代码可能会因此变得更复杂。 最好的情况是将该模式引入创建者类的现有层次结构中。</p>
-<p>工厂方法是指定义工厂接口和产品接口，但如何创建实际工厂和实际产品被推迟到子类实现，从而使调用方只和抽象工厂与抽象产品打交道。</p>
+<h3 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h3><p><strong>优点：</strong></p>
+<p> 可以避免创建者和具体产品之间的紧密耦合。</p>
+<p> 单一职责原则。 可以将产品创建代码放在程序的单一位置， 从而使得代码更容易维护。</p>
+<p> 开闭原则。 无需更改现有客户端代码， 你就可以在程序中引入新的产品类型。</p>
+<p><strong>缺点：</strong></p>
+<p>应用工厂方法模式需要引入许多新的子类， 代码可能会因此变得更复杂。 最好的情况是将该模式引入创建者类的现有层次结构中。</p>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>工厂方法是指定义工厂接口和产品接口，但如何创建实际工厂和实际产品被推迟到子类实现，从而使调用方只和抽象工厂与抽象产品打交道。</p>
 <p>实际更常用的是更简单的静态工厂方法，它允许工厂内部对创建产品进行优化。</p>
 <p>调用方尽量持有接口或抽象类，避免持有具体类型的子类，以便工厂方法能随时切换不同的子类返回，却不影响调用方代码。</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
@@ -516,6 +504,20 @@
       </categories>
       <tags>
         <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>从代码块到单例模式</title>
+    <url>/2021/11/13/20211113-java%E4%BB%A3%E7%A0%81%E5%9D%97/</url>
+    <content><![CDATA[<h2 id="代码块："><a href="#代码块：" class="headerlink" title="代码块："></a>代码块：</h2><h3 id="普通代码块："><a href="#普通代码块：" class="headerlink" title="普通代码块："></a>普通代码块：</h3><h3 id="静态代码块："><a href="#静态代码块：" class="headerlink" title="静态代码块："></a>静态代码块：</h3><h3 id="调用顺序："><a href="#调用顺序：" class="headerlink" title="调用顺序："></a>调用顺序：</h3><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20211113130904781.png" alt="image-20211113130904781"></p>
+<h2 id="单例模式："><a href="#单例模式：" class="headerlink" title="单例模式："></a>单例模式：</h2><h3 id="什么是单例模式："><a href="#什么是单例模式：" class="headerlink" title="什么是单例模式："></a>什么是单例模式：</h3><p>​    </p>
+]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>设计模式</tag>
       </tags>
   </entry>
   <entry>
@@ -1127,7 +1129,7 @@
 <p>如果没有则生成，命令如下：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;email@email.com&quot;</span></span><br></pre></td></tr></table></figure>
 
-<p><strong>注意：其中”<a href="mailto:&#101;&#109;&#97;&#x69;&#x6c;&#64;&#x65;&#x6d;&#97;&#105;&#x6c;&#46;&#99;&#111;&#109;">&#101;&#109;&#97;&#x69;&#x6c;&#64;&#x65;&#x6d;&#97;&#105;&#x6c;&#46;&#99;&#111;&#109;</a>“是GitHub账号。</strong></p>
+<p><strong>注意：其中”<a href="mailto:&#101;&#109;&#x61;&#105;&#x6c;&#x40;&#x65;&#109;&#97;&#105;&#108;&#46;&#99;&#x6f;&#109;">&#101;&#109;&#x61;&#105;&#x6c;&#x40;&#x65;&#109;&#97;&#105;&#108;&#46;&#99;&#x6f;&#109;</a>“是GitHub账号。</strong></p>
 <p>过程中一路enter就可以了，文件会保存在<code>~/.ssh</code>目录下，id_rsa是你的私钥，id_rsa.pub是公钥。</p>
 <h2 id="添加到Github"><a href="#添加到Github" class="headerlink" title="添加到Github"></a>添加到Github</h2><p>拷贝公钥：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
