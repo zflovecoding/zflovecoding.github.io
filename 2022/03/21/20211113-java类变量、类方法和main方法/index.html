@@ -78,8 +78,8 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2021/11/13/20211113-java%E7%B1%BB%E5%8F%98%E9%87%8F%E3%80%81%E7%B1%BB%E6%96%B9%E6%B3%95%E5%92%8Cmain%E6%96%B9%E6%B3%95/" class="article-date">
-  <time datetime="2021-11-12T16:00:00.000Z" itemprop="datePublished">2021-11-13</time>
+      <a href="/2022/03/21/20211113-java%E7%B1%BB%E5%8F%98%E9%87%8F%E3%80%81%E7%B1%BB%E6%96%B9%E6%B3%95%E5%92%8Cmain%E6%96%B9%E6%B3%95/" class="article-date">
+  <time datetime="2022-03-20T16:00:00.000Z" itemprop="datePublished">2022-03-21</time>
 </a> 
   <div class="article-category">
     <a class="article-category-link" href="/categories/java/">java</a>
@@ -114,7 +114,8 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h2 id="类变量"><a href="#类变量" class="headerlink" title="类变量"></a>类变量</h2><p>据我们所知，java中的变量有三种类型：</p>
+  <p><del>本文开始于2021/11/13，完成于2022/3/21</del></p>
+<h2 id="类变量"><a href="#类变量" class="headerlink" title="类变量"></a>类变量</h2><p>据我们所知，java中的变量有三种类型：</p>
 <ul>
 <li>类变量：独立于方法之外的变量，用 static 修饰。</li>
 <li>实例变量：独立于方法之外的变量，不过没有 static 修饰。</li>
@@ -125,7 +126,7 @@
 <p>参考[<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/59174759/answer/163207831">1</a>,<a target="_blank" rel="noopener" href="https://blog.csdn.net/x_iya/article/details/81260154">2</a>]</p>
 <h3 id="如何访问"><a href="#如何访问" class="headerlink" title="如何访问"></a>如何访问</h3><p>类名.静态变量名（推荐使用）</p>
 <p>对象名.静态变量名</p>
-<h3 id="注意事项及细节"><a href="#注意事项及细节" class="headerlink" title="注意事项及细节"></a>注意事项及细节</h3><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20220321140816690.png" alt="image-20220321140816690"></p>
+<h3 id="注意事项及细节"><a href="#注意事项及细节" class="headerlink" title="注意事项及细节"></a>注意事项及细节</h3><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20220321140816690.png" alt="类变量的注意事项和细节"></p>
 <h2 id="类方法"><a href="#类方法" class="headerlink" title="类方法"></a>类方法</h2><p><strong>类方法：</strong> 又叫做静态方法</p>
 <p><strong>对象方法：</strong> 又叫实例方法，非静态方法</p>
 <h3 id="类方法-1"><a href="#类方法-1" class="headerlink" title="类方法"></a>类方法</h3><p>用static修饰的方法。由于类方法是属于整个类的，并不属于类的哪儿个对象，所以类方法的方法体中不能有与类的对象有关的内容。即类方法体有如下限制：</p>
@@ -149,7 +150,7 @@
 <li>方法不需要访问对象状态，因为它需要的所有参数都通过显示参数提供（e.g. Math.pow）</li>
 <li>方法只需要访问类的静态字段</li>
 </ul>
-<h3 id="注意事项及细节-1"><a href="#注意事项及细节-1" class="headerlink" title="注意事项及细节"></a>注意事项及细节</h3><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20220321143450185.png" alt="image-20220321143450185"></p>
+<h3 id="注意事项及细节-1"><a href="#注意事项及细节-1" class="headerlink" title="注意事项及细节"></a>注意事项及细节</h3><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20220321143450185.png" alt="类方法的注意事项和细节"></p>
 <h2 id="main方法"><a href="#main方法" class="headerlink" title="main方法"></a>main方法</h2><p><code>public static void main(String[] args)&#123;&#125;</code></p>
 <ol>
 <li>main()方法是虚拟机调用的</li>
@@ -163,7 +164,7 @@
 <blockquote>
 <p>定义一个用于创建对象的接口，让子类决定实例化哪一个类。Factory Method使一个类的实例化延迟到其子类。</p>
 </blockquote>
-<h3 id="工厂方法模式结构"><a href="#工厂方法模式结构" class="headerlink" title="工厂方法模式结构"></a>工厂方法模式结构</h3><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20220321154117056.png" alt="image-20220321154117056"></p>
+<h3 id="工厂方法模式结构"><a href="#工厂方法模式结构" class="headerlink" title="工厂方法模式结构"></a>工厂方法模式结构</h3><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20220321154117056.png" alt="工厂方法模式的结构"></p>
 <ol>
 <li><p><strong>产品</strong> （Product） 将会对接口进行声明。 对于所有由创建者及其子类构建的对象， 这些接口都是通用的。</p>
 </li>
@@ -177,7 +178,7 @@
 </li>
 </ol>
 <p>注意， 并不一定每次调用工厂方法都会<strong>创建</strong>新的实例。 工厂方法也可以返回缓存、 对象池或其他来源的已有对象。</p>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20220321154458434.png" alt="image-20220321154458434"></p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p><img src="https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20220321154458434.png" alt="工厂方法模式示例"></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建者类声明的工厂方法必须返回一个产品类的对象。创建者的子类通常会提供</span></span><br><span class="line"><span class="comment">// 该方法的实现。</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dialog</span> <span class="title">is</span></span></span><br><span class="line"><span class="class">    // 创建者还可提供一些工厂方法的默认实现。</span></span><br><span class="line"><span class="class">    <span class="title">abstract</span> <span class="title">method</span> <span class="title">createButton</span>():<span class="title">Button</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">    // 请注意，创建者的主要职责并非是创建产品。其中通常会包含一些核心业务</span></span><br><span class="line"><span class="class">    // 逻辑，这些逻辑依赖于由工厂方法返回的产品对象。子类可通过重写工厂方</span></span><br><span class="line"><span class="class">    // 法并使其返回不同类型的产品来间接修改业务逻辑。</span></span><br><span class="line"><span class="class">    <span class="title">method</span> <span class="title">render</span>() <span class="title">is</span></span></span><br><span class="line"><span class="class">        // 调用工厂方法创建一个产品对象。</span></span><br><span class="line"><span class="class">        <span class="title">Button</span> <span class="title">okButton</span> </span>= createButton()</span><br><span class="line">        <span class="comment">// 现在使用产品。</span></span><br><span class="line">        okButton.onClick(closeDialog)</span><br><span class="line">        okButton.render()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 具体创建者将重写工厂方法以改变其所返回的产品类型。</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">WindowsDialog</span> <span class="keyword">extends</span> <span class="title">Dialog</span> <span class="title">is</span></span></span><br><span class="line"><span class="class">    <span class="title">method</span> <span class="title">createButton</span>():<span class="title">Button</span> <span class="title">is</span></span></span><br><span class="line"><span class="class">        <span class="title">return</span> <span class="title">new</span> <span class="title">WindowsButton</span>()</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">WebDialog</span> <span class="keyword">extends</span> <span class="title">Dialog</span> <span class="title">is</span></span></span><br><span class="line"><span class="class">    <span class="title">method</span> <span class="title">createButton</span>():<span class="title">Button</span> <span class="title">is</span></span></span><br><span class="line"><span class="class">        <span class="title">return</span> <span class="title">new</span> <span class="title">HTMLButton</span>()</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">// 产品接口中将声明所有具体产品都必须实现的操作。</span></span><br><span class="line"><span class="class"><span class="title">interface</span> <span class="title">Button</span> <span class="title">is</span></span></span><br><span class="line"><span class="class">    <span class="title">method</span> <span class="title">render</span>()</span></span><br><span class="line"><span class="class">    <span class="title">method</span> <span class="title">onClick</span>(<span class="title">f</span>)</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">// 具体产品需提供产品接口的各种实现。</span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">WindowsButton</span> <span class="title">implements</span> <span class="title">Button</span> <span class="title">is</span></span></span><br><span class="line"><span class="class">    <span class="title">method</span> <span class="title">render</span>(<span class="title">a</span>, <span class="title">b</span>) <span class="title">is</span></span></span><br><span class="line"><span class="class">        // 根据 <span class="title">Windows</span> 样式渲染按钮。</span></span><br><span class="line"><span class="class">    <span class="title">method</span> <span class="title">onClick</span>(<span class="title">f</span>) <span class="title">is</span></span></span><br><span class="line"><span class="class">        // 绑定本地操作系统点击事件。</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">HTMLButton</span> <span class="title">implements</span> <span class="title">Button</span> <span class="title">is</span></span></span><br><span class="line"><span class="class">    <span class="title">method</span> <span class="title">render</span>(<span class="title">a</span>, <span class="title">b</span>) <span class="title">is</span></span></span><br><span class="line"><span class="class">        // 返回一个按钮的 <span class="title">HTML</span> 表述。</span></span><br><span class="line"><span class="class">    <span class="title">method</span> <span class="title">onClick</span>(<span class="title">f</span>) <span class="title">is</span></span></span><br><span class="line"><span class="class">        // 绑定网络浏览器的点击事件。</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">Application</span> <span class="title">is</span></span></span><br><span class="line"><span class="class">    <span class="title">field</span> <span class="title">dialog</span>: <span class="title">Dialog</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">    // 程序根据当前配置或环境设定选择创建者的类型。</span></span><br><span class="line"><span class="class">    <span class="title">method</span> <span class="title">initialize</span>() <span class="title">is</span></span></span><br><span class="line"><span class="class">        <span class="title">config</span> </span>= readApplicationConfigFile()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (config.OS == <span class="string">&quot;Windows&quot;</span>) then</span><br><span class="line">            dialog = <span class="keyword">new</span> WindowsDialog()</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (config.OS == <span class="string">&quot;Web&quot;</span>) then</span><br><span class="line">            dialog = <span class="keyword">new</span> WebDialog()</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="string">&quot;错误！未知的操作系统。&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 当前客户端代码会与具体创建者的实例进行交互，但是必须通过其基本接口</span></span><br><span class="line">    <span class="comment">// 进行。只要客户端通过基本接口与创建者进行交互，你就可将任何创建者子</span></span><br><span class="line">    <span class="comment">// 类传递给客户端。</span></span><br><span class="line">    method main() is</span><br><span class="line">        <span class="built_in">this</span>.initialize()</span><br><span class="line">        dialog.render()</span><br></pre></td></tr></table></figure>
 
 <h3 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h3><ul>
@@ -248,19 +249,10 @@
    
   <nav class="article-nav">
     
-      <a href="/2021/11/13/20211113-java%E4%B8%AD%E7%9A%84final%E5%85%B3%E9%94%AE%E5%AD%97/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            java中的final关键字
-          
-        </div>
-      </a>
     
-    
-      <a href="/2021/11/13/20211113-java%E4%BB%A3%E7%A0%81%E5%9D%97/" class="article-nav-link">
+      <a href="/2022/01/28/2022128-javaIO%E6%B5%81/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">从代码块到单例模式</div>
+        <div class="article-nav-title">javaIO流</div>
       </a>
     
   </nav>
