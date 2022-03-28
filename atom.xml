@@ -235,34 +235,6 @@
   </entry>
   
   <entry>
-    <title>从抽象类到模板模式</title>
-    <link href="http://example.com/2021/11/14/20211114-%E4%BB%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%88%B0%E6%A8%A1%E6%9D%BF%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://example.com/2021/11/14/20211114-%E4%BB%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%88%B0%E6%A8%A1%E6%9D%BF%E6%A8%A1%E5%BC%8F/</id>
-    <published>2021-11-13T16:00:00.000Z</published>
-    <updated>2022-03-21T08:09:44.166Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;del&gt;本文开始于2021/11/14，完结于2022/3/21&lt;/del&gt;&lt;/p&gt;
-&lt;h2 id=&quot;抽象类&quot;&gt;&lt;a href=&quot;#抽象类&quot; class=&quot;headerlink&quot; title=&quot;抽象类&quot;&gt;&lt;/a&gt;抽象类&lt;/h2&gt;&lt;h2 id=&quot;模板模式&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="java" scheme="http://example.com/categories/java/"/>
-    
-    
-    <category term="java" scheme="http://example.com/tags/java/"/>
-    
-    <category term="设计模式" scheme="http://example.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
     <title>java内部类</title>
     <link href="http://example.com/2021/11/14/20211114-java%E5%86%85%E9%83%A8%E7%B1%BB/"/>
     <id>http://example.com/2021/11/14/20211114-java%E5%86%85%E9%83%A8%E7%B1%BB/</id>
@@ -291,6 +263,34 @@
     
     
     <category term="java" scheme="http://example.com/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从抽象类到模板模式</title>
+    <link href="http://example.com/2021/11/14/20211114-%E4%BB%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%88%B0%E6%A8%A1%E6%9D%BF%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://example.com/2021/11/14/20211114-%E4%BB%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%88%B0%E6%A8%A1%E6%9D%BF%E6%A8%A1%E5%BC%8F/</id>
+    <published>2021-11-13T16:00:00.000Z</published>
+    <updated>2022-03-21T08:09:44.166Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;del&gt;本文开始于2021/11/14，完结于2022/3/21&lt;/del&gt;&lt;/p&gt;
+&lt;h2 id=&quot;抽象类&quot;&gt;&lt;a href=&quot;#抽象类&quot; class=&quot;headerlink&quot; title=&quot;抽象类&quot;&gt;&lt;/a&gt;抽象类&lt;/h2&gt;&lt;h2 id=&quot;模板模式&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="java" scheme="http://example.com/categories/java/"/>
+    
+    
+    <category term="java" scheme="http://example.com/tags/java/"/>
+    
+    <category term="设计模式" scheme="http://example.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
@@ -537,6 +537,897 @@
     <category term="Git" scheme="http://example.com/tags/Git/"/>
     
     <category term="Github" scheme="http://example.com/tags/Github/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo d部署突然出现问题</title>
+    <link href="http://example.com/2021/11/10/hexo-d%E9%83%A8%E7%BD%B2%E7%AA%81%E7%84%B6%E5%87%BA%E7%8E%B0%E9%97%AE%E9%A2%98/"/>
+    <id>http://example.com/2021/11/10/hexo-d%E9%83%A8%E7%BD%B2%E7%AA%81%E7%84%B6%E5%87%BA%E7%8E%B0%E9%97%AE%E9%A2%98/</id>
+    <published>2021-11-09T16:00:00.000Z</published>
+    <updated>2021-11-10T08:27:44.558Z</updated>
+    
+    
+    
+    
+    <category term="hexo" scheme="http://example.com/categories/hexo/"/>
+    
+    
+    <category term="hexo" scheme="http://example.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>个人博客之旅</title>
+    <link href="http://example.com/2021/11/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%B9%8B%E6%97%85/"/>
+    <id>http://example.com/2021/11/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%B9%8B%E6%97%85/</id>
+    <published>2021-11-08T16:00:00.000Z</published>
+    <updated>2021-12-28T13:51:10.834Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="网站" scheme="http://example.com/categories/%E7%BD%91%E7%AB%99/"/>
+    
+    
+    <category term="hexo" scheme="http://example.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MIT_6.S081_Lab学习笔记(一)：环境准备</title>
+    <link href="http://example.com/2021/11/07/MIT-6-S081-Lab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E4%B8%80-%EF%BC%9A%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87/"/>
+    <id>http://example.com/2021/11/07/MIT-6-S081-Lab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E4%B8%80-%EF%BC%9A%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87/</id>
+    <published>2021-11-07T13:20:24.000Z</published>
+    <updated>2021-11-09T03:57:10.875Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;实验前推荐阅读：&lt;/p&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="MIT6.S081" scheme="http://example.com/categories/MIT6-S081/"/>
+    
+    
+    <category term="国外公开课" scheme="http://example.com/tags/%E5%9B%BD%E5%A4%96%E5%85%AC%E5%BC%80%E8%AF%BE/"/>
+    
+    <category term="MIT6.S081" scheme="http://example.com/tags/MIT6-S081/"/>
+    
+    <category term="操作系统" scheme="http://example.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java序列化及transient关键字</title>
+    <link href="http://example.com/2021/11/06/java%E5%BA%8F%E5%88%97%E5%8C%96%E5%8F%8Atransient%E5%85%B3%E9%94%AE%E5%AD%97/"/>
+    <id>http://example.com/2021/11/06/java%E5%BA%8F%E5%88%97%E5%8C%96%E5%8F%8Atransient%E5%85%B3%E9%94%AE%E5%AD%97/</id>
+    <published>2021-11-05T16:00:00.000Z</published>
+    <updated>2021-11-08T13:36:44.865Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;参考：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="java" scheme="http://example.com/categories/java/"/>
+    
+    
+    <category term="java" scheme="http://example.com/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>String类的compareTo()方法</title>
+    <link href="http://example.com/2021/11/03/String%E7%B1%BB%E7%9A%84compareTo()%E6%96%B9%E6%B3%95/"/>
+    <id>http://example.com/2021/11/03/String%E7%B1%BB%E7%9A%84compareTo()%E6%96%B9%E6%B3%95/</id>
+    <published>2021-11-02T16:00:00.000Z</published>
+    <updated>2021-11-09T07:35:29.829Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;参考：&lt;/p&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="java" scheme="http://example.com/categories/java/"/>
+    
+    
+    <category term="java" scheme="http://example.com/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java运算符</title>
+    <link href="http://example.com/2021/11/01/java%E8%BF%90%E7%AE%97%E7%AC%A6/"/>
+    <id>http://example.com/2021/11/01/java%E8%BF%90%E7%AE%97%E7%AC%A6/</id>
+    <published>2021-10-31T16:00:00.000Z</published>
+    <updated>2021-11-09T07:08:23.888Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;参考：&lt;/p&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="java" scheme="http://example.com/categories/java/"/>
+    
+    
+    <category term="java" scheme="http://example.com/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C Pointer</title>
+    <link href="http://example.com/2021/10/30/C%20Pointer/"/>
+    <id>http://example.com/2021/10/30/C%20Pointer/</id>
+    <published>2021-10-29T16:00:00.000Z</published>
+    <updated>2021-11-10T10:50:49.468Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;待更新&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;参考：&lt;/p&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="C" scheme="http://example.com/categories/C/"/>
+    
+    
+    <category term="C" scheme="http://example.com/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java注解和反射</title>
+    <link href="http://example.com/2021/10/29/java%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84/"/>
+    <id>http://example.com/2021/10/29/java%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84/</id>
+    <published>2021-10-28T16:00:00.000Z</published>
+    <updated>2021-11-09T08:07:49.953Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;注解-Annotation&quot;&gt;&lt;a href=&quot;#注解-Annotation&quot; class=&quot;headerlink&quot; title=&quot;注解(Annotation)&quot;&gt;&lt;/a&gt;注解(Annotation)&lt;/h2&gt;&lt;h3 id=&quot;注解入门&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="java" scheme="http://example.com/categories/java/"/>
+    
+    
+    <category term="java" scheme="http://example.com/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java自动装箱和拆箱</title>
+    <link href="http://example.com/2021/10/28/Java%E8%87%AA%E5%8A%A8%E8%A3%85%E7%AE%B1%E5%92%8C%E6%8B%86%E7%AE%B1/"/>
+    <id>http://example.com/2021/10/28/Java%E8%87%AA%E5%8A%A8%E8%A3%85%E7%AE%B1%E5%92%8C%E6%8B%86%E7%AE%B1/</id>
+    <published>2021-10-27T16:00:00.000Z</published>
+    <updated>2021-11-09T07:13:16.041Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;参考：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/dolphin0520/p/3780005.html&quot;&gt;博客园&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="java" scheme="http://example.com/categories/java/"/>
+    
+    
+    <category term="java" scheme="http://example.com/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Servlet学习笔记</title>
+    <link href="http://example.com/2021/10/21/Servlet/"/>
+    <id>http://example.com/2021/10/21/Servlet/</id>
+    <published>2021-10-20T16:00:00.000Z</published>
+    <updated>2021-11-09T08:01:09.817Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;待更新&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;servlet生命周期&quot;&gt;&lt;a href=&quot;#servlet生命周期&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="javaweb" scheme="http://example.com/categories/javaweb/"/>
+    
+    
+    <category term="java" scheme="http://example.com/tags/java/"/>
+    
+    <category term="javaweb" scheme="http://example.com/tags/javaweb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java常用类</title>
+    <link href="http://example.com/2021/10/16/java%E5%B8%B8%E7%94%A8%E7%B1%BB/"/>
+    <id>http://example.com/2021/10/16/java%E5%B8%B8%E7%94%A8%E7%B1%BB/</id>
+    <published>2021-10-15T16:00:00.000Z</published>
+    <updated>2021-11-09T07:02:36.938Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;待更新&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;String、StringBuffer、StringBuilder&quot;&gt;&lt;a href=&quot;#String、StringBuffer、StringBuilder&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="java" scheme="http://example.com/categories/java/"/>
+    
+    
+    <category term="java" scheme="http://example.com/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git学习笔记(Learn Git  Branch)</title>
+    <link href="http://example.com/2021/10/13/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(Learn%20Git%20%20Branch)/"/>
+    <id>http://example.com/2021/10/13/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(Learn%20Git%20%20Branch)/</id>
+    <published>2021-10-12T16:00:00.000Z</published>
+    <updated>2021-11-09T07:01:13.919Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;待更新&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;写在前面&lt;/h2&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Git" scheme="http://example.com/categories/Git/"/>
+    
+    
+    <category term="Git" scheme="http://example.com/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL</title>
+    <link href="http://example.com/2021/10/10/MySQL/"/>
+    <id>http://example.com/2021/10/10/MySQL/</id>
+    <published>2021-10-09T16:00:00.000Z</published>
+    <updated>2021-11-09T08:09:15.455Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;0-公众号笔记&quot;&gt;&lt;a href=&quot;#0-公众号笔记&quot; class=&quot;headerlink&quot; title=&quot;0.公众号笔记&quot;&gt;&lt;/a&gt;0.公众号笔记&lt;/h2&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="数据库" scheme="http://example.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+    <category term="狂神说java" scheme="http://example.com/tags/%E7%8B%82%E7%A5%9E%E8%AF%B4java/"/>
+    
+    <category term="MySQL" scheme="http://example.com/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JVM符号引用和直接引用</title>
+    <link href="http://example.com/2021/10/09/JVM%E7%AC%A6%E5%8F%B7%E5%BC%95%E7%94%A8%E5%92%8C%E7%9B%B4%E6%8E%A5%E5%BC%95%E7%94%A8/"/>
+    <id>http://example.com/2021/10/09/JVM%E7%AC%A6%E5%8F%B7%E5%BC%95%E7%94%A8%E5%92%8C%E7%9B%B4%E6%8E%A5%E5%BC%95%E7%94%A8/</id>
+    <published>2021-10-08T16:00:00.000Z</published>
+    <updated>2021-11-09T07:51:03.033Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="java" scheme="http://example.com/categories/java/"/>
+    
+    
+    <category term="java" scheme="http://example.com/tags/java/"/>
+    
+    <category term="jvm" scheme="http://example.com/tags/jvm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java中 == 和 equals 的区别</title>
+    <link href="http://example.com/2021/10/09/java%E4%B8%AD%20==%20%E5%92%8C%20equals%20%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>http://example.com/2021/10/09/java%E4%B8%AD%20==%20%E5%92%8C%20equals%20%E7%9A%84%E5%8C%BA%E5%88%AB/</id>
+    <published>2021-10-08T16:00:00.000Z</published>
+    <updated>2021-11-09T07:09:34.749Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;==&quot;&gt;&lt;/a&gt;==&lt;/h2&gt;&lt;p&gt;==</summary>
+        
+      
+    
+    
+    
+    <category term="java" scheme="http://example.com/categories/java/"/>
+    
+    
+    <category term="java" scheme="http://example.com/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>jvm内存结构</title>
+    <link href="http://example.com/2021/10/09/jvm%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/"/>
+    <id>http://example.com/2021/10/09/jvm%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/</id>
+    <published>2021-10-08T16:00:00.000Z</published>
+    <updated>2021-11-19T12:51:25.197Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一、参考：&quot;&gt;&lt;a href=&quot;#一、参考：&quot; class=&quot;headerlink&quot; title=&quot;一、参考：&quot;&gt;&lt;/a&gt;一、参考：&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="java" scheme="http://example.com/categories/java/"/>
+    
+    
+    <category term="java" scheme="http://example.com/tags/java/"/>
+    
+    <category term="jvm" scheme="http://example.com/tags/jvm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java类加载机制</title>
+    <link href="http://example.com/2021/10/04/java%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/"/>
+    <id>http://example.com/2021/10/04/java%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/</id>
+    <published>2021-10-03T16:00:00.000Z</published>
+    <updated>2021-11-19T12:55:48.528Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;参考文章：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.cnblogs.com/chanshuyi/p/the_java_class_load_mechamism.html&quot;&gt;类加载机制&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="java" scheme="http://example.com/categories/java/"/>
+    
+    
+    <category term="java" scheme="http://example.com/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>双亲委派机制</title>
+    <link href="http://example.com/2021/10/04/%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE%E6%9C%BA%E5%88%B6/"/>
+    <id>http://example.com/2021/10/04/%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE%E6%9C%BA%E5%88%B6/</id>
+    <published>2021-10-03T16:00:00.000Z</published>
+    <updated>2021-11-09T07:39:04.546Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;参考：&quot;&gt;&lt;a href=&quot;#参考：&quot; class=&quot;headerlink&quot; title=&quot;参考：&quot;&gt;&lt;/a&gt;参考：&lt;/h2&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="java" scheme="http://example.com/categories/java/"/>
+    
+    
+    <category term="java" scheme="http://example.com/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>进大厂企划案</title>
+    <link href="http://example.com/2021/09/26/%E6%83%B3%E8%BF%9B%E5%A4%A7%E5%8E%82/"/>
+    <id>http://example.com/2021/09/26/%E6%83%B3%E8%BF%9B%E5%A4%A7%E5%8E%82/</id>
+    <published>2021-09-25T16:00:00.000Z</published>
+    <updated>2021-11-13T07:45:35.565Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;面试&quot;&gt;&lt;a href=&quot;#面试&quot; class=&quot;headerlink&quot; title=&quot;面试&quot;&gt;&lt;/a&gt;面试&lt;/h1&gt;&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="个人规划" scheme="http://example.com/categories/%E4%B8%AA%E4%BA%BA%E8%A7%84%E5%88%92/"/>
+    
+    
+    <category term="计划" scheme="http://example.com/tags/%E8%AE%A1%E5%88%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringBoot学习笔记</title>
+    <link href="http://example.com/2021/09/14/SpringBoot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://example.com/2021/09/14/SpringBoot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2021-09-13T16:00:00.000Z</published>
+    <updated>2021-11-09T08:32:55.960Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;项目创建&quot;&gt;&lt;a href=&quot;#项目创建&quot; class=&quot;headerlink&quot; title=&quot;项目创建&quot;&gt;&lt;/a&gt;项目创建&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;项目创建方式一：&lt;/strong&gt;使用Spring Initializr 的</summary>
+        
+      
+    
+    
+    
+    <category term="SpringBoot" scheme="http://example.com/categories/SpringBoot/"/>
+    
+    
+    <category term="SpringBoot" scheme="http://example.com/tags/SpringBoot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spring学习笔记</title>
+    <link href="http://example.com/2021/07/26/Spring%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://example.com/2021/07/26/Spring%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2021-07-25T16:00:00.000Z</published>
+    <updated>2021-11-09T07:52:23.943Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;待更新&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;前置知识：&quot;&gt;&lt;a href=&quot;#前置知识：&quot; class=&quot;headerlink&quot; title=&quot;前置知识：&quot;&gt;&lt;/a&gt;前置知识：&lt;/h2&gt;&lt;h3 id=&quot;Servlet原理&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="SSM框架" scheme="http://example.com/categories/SSM%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="java" scheme="http://example.com/tags/java/"/>
+    
+    <category term="狂神说java" scheme="http://example.com/tags/%E7%8B%82%E7%A5%9E%E8%AF%B4java/"/>
+    
+    <category term="Spring" scheme="http://example.com/tags/Spring/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringMVC学习笔记</title>
+    <link href="http://example.com/2021/07/20/SpringMVC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://example.com/2021/07/20/SpringMVC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2021-07-19T16:00:00.000Z</published>
+    <updated>2021-11-09T08:25:02.610Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;待更新&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;我们为什么要学习SpringMVC呢&quot;&gt;&lt;a href=&quot;#我们为什么要学习SpringMVC呢&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="SSM框架" scheme="http://example.com/categories/SSM%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="狂神说java" scheme="http://example.com/tags/%E7%8B%82%E7%A5%9E%E8%AF%B4java/"/>
+    
+    <category term="SpringMVC" scheme="http://example.com/tags/SpringMVC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mybatis学习笔记</title>
+    <link href="http://example.com/2021/07/16/Mybatis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://example.com/2021/07/16/Mybatis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2021-07-15T16:00:00.000Z</published>
+    <updated>2021-11-09T08:01:29.175Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;待更新&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://gitee.com/geekpig/my-blog-images/raw/master/img/image-20210714234350122.png&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="SSM框架" scheme="http://example.com/categories/SSM%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="狂神说java" scheme="http://example.com/tags/%E7%8B%82%E7%A5%9E%E8%AF%B4java/"/>
+    
+    <category term="Mybatis" scheme="http://example.com/tags/Mybatis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Maven</title>
+    <link href="http://example.com/2021/06/18/Maven/"/>
+    <id>http://example.com/2021/06/18/Maven/</id>
+    <published>2021-06-17T16:00:00.000Z</published>
+    <updated>2021-11-09T08:10:32.265Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;待更新&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;XML&quot;&gt;&lt;a href=&quot;#XML&quot; class=&quot;headerlink&quot; title=&quot;XML&quot;&gt;&lt;/a&gt;XML&lt;/h2&gt;&lt;p&gt;XML 格式&lt;/p&gt;
+&lt;p&gt;可扩展标记语言 (XML)</summary>
+        
+      
+    
+    
+    
+    <category term="java" scheme="http://example.com/categories/java/"/>
+    
+    
+    <category term="java" scheme="http://example.com/tags/java/"/>
+    
+    <category term="maven" scheme="http://example.com/tags/maven/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git配置身份</title>
+    <link href="http://example.com/2021/06/07/Git%E9%85%8D%E7%BD%AE%E8%BA%AB%E4%BB%BD/"/>
+    <id>http://example.com/2021/06/07/Git%E9%85%8D%E7%BD%AE%E8%BA%AB%E4%BB%BD/</id>
+    <published>2021-06-07T13:24:50.000Z</published>
+    <updated>2021-11-09T08:24:37.967Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;Git的安装&quot;&gt;&lt;a href=&quot;#Git的安装&quot; class=&quot;headerlink&quot; title=&quot;Git的安装&quot;&gt;&lt;/a&gt;Git的安装&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;%22https://git-scm.com/downloads%22&quot;&gt;官网&lt;/a&gt;安装，可能由于国内网络条件的问题可能难以安装&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;%22https://npm.taobao.org/mirrors/git-for-windows/%22&quot;&gt;淘宝的镜像源安装&lt;/a&gt;,可以成功安装！&lt;/li&gt;
+&lt;/ol&gt;</summary>
+    
+    
+    
+    <category term="Git" scheme="http://example.com/categories/Git/"/>
+    
+    
+    <category term="Git" scheme="http://example.com/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java网络编程</title>
+    <link href="http://example.com/2021/03/11/java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+    <id>http://example.com/2021/03/11/java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</id>
+    <published>2021-03-10T16:00:00.000Z</published>
+    <updated>2021-11-09T07:06:46.972Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-1-概述&quot;&gt;&lt;a href=&quot;#1-1-概述&quot; class=&quot;headerlink&quot; title=&quot;1.1 概述&quot;&gt;&lt;/a&gt;1.1 概述&lt;/h2&gt;&lt;p&gt;信件：&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="java" scheme="http://example.com/categories/java/"/>
+    
+    
+    <category term="java" scheme="http://example.com/tags/java/"/>
+    
+    <category term="网络编程" scheme="http://example.com/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何配置IDEA自带Maven插件的镜像源（找不到settings.xml）</title>
+    <link href="http://example.com/2020/11/02/%E9%85%8D%E7%BD%AEIDEA%E8%87%AA%E5%B8%A6Maven%E6%8F%92%E4%BB%B6%E7%9A%84%E9%95%9C%E5%83%8F%E6%BA%90/"/>
+    <id>http://example.com/2020/11/02/%E9%85%8D%E7%BD%AEIDEA%E8%87%AA%E5%B8%A6Maven%E6%8F%92%E4%BB%B6%E7%9A%84%E9%95%9C%E5%83%8F%E6%BA%90/</id>
+    <published>2020-11-01T16:00:00.000Z</published>
+    <updated>2021-11-09T05:33:18.872Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1、问题描述&quot;&gt;&lt;a href=&quot;#1、问题描述&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="工具" scheme="http://example.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="IDEA" scheme="http://example.com/tags/IDEA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>部署网站知识总结</title>
+    <link href="http://example.com/2020/09/24/%E9%83%A8%E7%BD%B2%E7%BD%91%E7%AB%99/"/>
+    <id>http://example.com/2020/09/24/%E9%83%A8%E7%BD%B2%E7%BD%91%E7%AB%99/</id>
+    <published>2020-09-23T16:00:00.000Z</published>
+    <updated>2021-11-09T05:30:40.513Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;待完善&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;前提：&quot;&gt;&lt;a href=&quot;#前提：&quot; class=&quot;headerlink&quot; title=&quot;前提：&quot;&gt;&lt;/a&gt;前提：&lt;/h2&gt;&lt;h4 id=&quot;备案：&quot;&gt;&lt;a href=&quot;#备案：&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="网站" scheme="http://example.com/categories/%E7%BD%91%E7%AB%99/"/>
+    
+    
+    <category term="nginx" scheme="http://example.com/tags/nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS7最小化安装后，ifconfig命令无法使用command not found</title>
+    <link href="http://example.com/2020/09/10/CentOS7%E6%9C%80%E5%B0%8F%E5%8C%96%E5%AE%89%E8%A3%85%E5%90%8E%EF%BC%8Cifconfig%E5%91%BD%E4%BB%A4%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8command%20not%20found/"/>
+    <id>http://example.com/2020/09/10/CentOS7%E6%9C%80%E5%B0%8F%E5%8C%96%E5%AE%89%E8%A3%85%E5%90%8E%EF%BC%8Cifconfig%E5%91%BD%E4%BB%A4%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8command%20not%20found/</id>
+    <published>2020-09-09T16:00:00.000Z</published>
+    <updated>2021-11-09T07:13:52.946Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;问题描述：&quot;&gt;&lt;a href=&quot;#问题描述：&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="小问题" scheme="http://example.com/categories/%E5%B0%8F%E9%97%AE%E9%A2%98/"/>
+    
+    
+    <category term="Linux" scheme="http://example.com/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解决Linux下启动Tomcat遇到Neither the JAVA_HOME nor the JRE_HOME environment variable is defined</title>
+    <link href="http://example.com/2020/09/10/%E8%A7%A3%E5%86%B3Linux%E4%B8%8B%E5%90%AF%E5%8A%A8Tomcat%E9%81%87%E5%88%B0Neither%20the%20JAVA_HOME%20nor%20the%20JRE_HOME%20environment%20variable%20is%20defined/"/>
+    <id>http://example.com/2020/09/10/%E8%A7%A3%E5%86%B3Linux%E4%B8%8B%E5%90%AF%E5%8A%A8Tomcat%E9%81%87%E5%88%B0Neither%20the%20JAVA_HOME%20nor%20the%20JRE_HOME%20environment%20variable%20is%20defined/</id>
+    <published>2020-09-09T16:00:00.000Z</published>
+    <updated>2021-11-09T08:01:53.769Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;问题描述：&quot;&gt;&lt;a href=&quot;#问题描述：&quot; class=&quot;headerlink&quot; title=&quot;问题描述：&quot;&gt;&lt;/a&gt;问题描述：&lt;/h2&gt;&lt;p&gt;在CentOS下安装完Tomcat环境后设置了一下快速启动，却发现在执行&lt;code&gt;service tomcat</summary>
+        
+      
+    
+    
+    
+    <category term="小问题" scheme="http://example.com/categories/%E5%B0%8F%E9%97%AE%E9%A2%98/"/>
+    
+    
+    <category term="Linux" scheme="http://example.com/tags/Linux/"/>
+    
+    <category term="Tomcat" scheme="http://example.com/tags/Tomcat/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IDEA快捷键</title>
+    <link href="http://example.com/2020/08/20/IDEA%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <id>http://example.com/2020/08/20/IDEA%E5%BF%AB%E6%8D%B7%E9%94%AE/</id>
+    <published>2020-08-19T16:00:00.000Z</published>
+    <updated>2021-11-09T00:44:51.088Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"> &lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="工具" scheme="http://example.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="IDEA" scheme="http://example.com/tags/IDEA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解决Git在clone项目时遇到的Error</title>
+    <link href="http://example.com/2020/08/10/%E8%A7%A3%E5%86%B3Git%E5%9C%A8clone%E9%A1%B9%E7%9B%AE%E6%97%B6%E7%9A%84fatal/"/>
+    <id>http://example.com/2020/08/10/%E8%A7%A3%E5%86%B3Git%E5%9C%A8clone%E9%A1%B9%E7%9B%AE%E6%97%B6%E7%9A%84fatal/</id>
+    <published>2020-08-09T16:00:00.000Z</published>
+    <updated>2021-11-09T06:44:44.046Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;p&gt;在找开源项目时，准备clone Github上著名的开源项目halo时发现git</summary>
+        
+      
+    
+    
+    
+    <category term="小问题" scheme="http://example.com/categories/%E5%B0%8F%E9%97%AE%E9%A2%98/"/>
+    
+    
+    <category term="Git" scheme="http://example.com/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java SE学习笔记</title>
+    <link href="http://example.com/2020/07/20/Java%20SE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://example.com/2020/07/20/Java%20SE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2020-07-19T16:00:00.000Z</published>
+    <updated>2021-11-24T14:04:47.872Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;​                                       &lt;strong&gt;本文笔记整理自&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="java" scheme="http://example.com/categories/java/"/>
+    
+    
+    <category term="java" scheme="http://example.com/tags/java/"/>
+    
+    <category term="狂神说java" scheme="http://example.com/tags/%E7%8B%82%E7%A5%9E%E8%AF%B4java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git把本地代码推送到远程仓库</title>
+    <link href="http://example.com/2020/06/01/Git%E6%8A%8A%E6%9C%AC%E5%9C%B0%E4%BB%A3%E7%A0%81%E6%8E%A8%E9%80%81%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/"/>
+    <id>http://example.com/2020/06/01/Git%E6%8A%8A%E6%9C%AC%E5%9C%B0%E4%BB%A3%E7%A0%81%E6%8E%A8%E9%80%81%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/</id>
+    <published>2020-05-31T16:00:00.000Z</published>
+    <updated>2021-11-09T05:26:36.041Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;首先默认已经安装了git,并且为git配置好了身份。&lt;/p&gt;
+&lt;p&gt;首先找到你项目的文件夹，比如项目名称为myproject，进入到这个文件夹，鼠标右键找到Git Bash Here&lt;/p&gt;
+&lt;p&gt;接下来依次执行命令：&lt;/p&gt;
+&lt;figure</summary>
+        
+      
+    
+    
+    
+    <category term="Git" scheme="http://example.com/categories/Git/"/>
+    
+    
+    <category term="Git" scheme="http://example.com/tags/Git/"/>
     
   </entry>
   
